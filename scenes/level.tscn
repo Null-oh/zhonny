@@ -1,0 +1,65 @@
+[gd_scene load_steps=21 format=3 uid="uid://bpuauwxv8gcpl"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_vylwx"]
+[ext_resource type="PackedScene" uid="uid://c7dclychy2f4k" path="res://scenes/tiles.tscn" id="2_hjrcn"]
+[ext_resource type="PackedScene" uid="uid://b427bdcyeo3j1" path="res://assets/oparysh.tscn" id="2_xrl0k"]
+[ext_resource type="PackedScene" uid="uid://bu16vdwyjpme" path="res://assets/spawner.tscn" id="4_v4nd4"]
+[ext_resource type="Resource" uid="uid://dl7q3mexng170" path="res://drops/leaf.tres" id="5_myo3r"]
+[ext_resource type="Script" path="res://drops/drop_slot.gd" id="5_pccjk"]
+[ext_resource type="Resource" uid="uid://dl1j2nkuhav4q" path="res://drops/stick.tres" id="7_7qurs"]
+[ext_resource type="Resource" uid="uid://cvfpjw0deslum" path="res://drops/flower.tres" id="8_jd3cl"]
+[ext_resource type="Resource" uid="uid://c58ob2e2fiioi" path="res://drops/berry.tres" id="9_08fy2"]
+[ext_resource type="Resource" uid="uid://cic2ryidd25op" path="res://drops/mushroom.tres" id="10_5xatw"]
+[ext_resource type="Resource" uid="uid://ben24dpli5evj" path="res://drops/acorn.tres" id="11_weudl"]
+[ext_resource type="Resource" uid="uid://gmmmp3o32cm5" path="res://drops/raf.tres" id="12_q83g0"]
+[ext_resource type="PackedScene" uid="uid://ccmk8700wohmm" path="res://assets/interface.tscn" id="13_n63tf"]
+
+[sub_resource type="Resource" id="Resource_a2q8i"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("5_myo3r")
+quantity = 20
+
+[sub_resource type="Resource" id="Resource_hfk6m"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("7_7qurs")
+quantity = 20
+
+[sub_resource type="Resource" id="Resource_vqpdq"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("8_jd3cl")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_rk22o"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("9_08fy2")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_p573x"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("10_5xatw")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_ykgt6"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("11_weudl")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_qeaqr"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("12_q83g0")
+quantity = 10
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_vylwx")
+
+[node name="tiles" parent="." instance=ExtResource("2_hjrcn")]
+
+[node name="oparysh" parent="." instance=ExtResource("2_xrl0k")]
+
+[node name="Camera2D" type="Camera2D" parent="oparysh"]
+zoom = Vector2(7, 7)
+
+[node name="spawner" parent="." instance=ExtResource("4_v4nd4")]
+drops = Array[ExtResource("5_pccjk")]([SubResource("Resource_a2q8i"), SubResource("Resource_hfk6m"), SubResource("Resource_vqpdq"), SubResource("Resource_rk22o"), SubResource("Resource_p573x"), SubResource("Resource_ykgt6"), SubResource("Resource_qeaqr")])
+
+[node name="interface" parent="." instance=ExtResource("13_n63tf")]

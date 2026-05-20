@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Drop" load_steps=4 format=3 uid="uid://dl7q3mexng170"]
+
+[ext_resource type="PackedScene" uid="uid://by21vvmmg3lto" path="res://drops/item_scene.tscn" id="1_nf5s8"]
+[ext_resource type="Script" path="res://drops/drop_res.gd" id="2_hd34v"]
+[ext_resource type="Texture2D" uid="uid://cgyfsr22eh672" path="res://img/leaf_texture.png" id="3_yjs81"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_hd34v")
+scene = ExtResource("1_nf5s8")
+name = "leaf"
+price = 1
+texture = ExtResource("3_yjs81")

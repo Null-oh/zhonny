@@ -1,0 +1,540 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccmk8700wohmm"]
+
+[ext_resource type="Script" path="res://scripts/interface.gd" id="1_3bmk6"]
+[ext_resource type="Theme" uid="uid://bhn337jsa4cxj" path="res://assets/buttons.tres" id="2_u6xkf"]
+[ext_resource type="FontFile" uid="uid://b1g365wn3n5ll" path="res://assets/kom-post.ttf" id="3_qsspc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_680uh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.776471, 0.305882, 0.121569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rfpj"]
+bg_color = Color(0.776471, 0.305882, 0.121569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cim4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.239216, 0.270588, 0.694118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo8nv"]
+bg_color = Color(0.239216, 0.270588, 0.694118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jx4x"]
+bg_color = Color(0.439216, 0.654902, 0.286275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.329412, 0.490196, 0.215686, 1)
+
+[node name="interface" type="CanvasLayer"]
+script = ExtResource("1_3bmk6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="info" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 45)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 32
+text = " bonus "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="timer" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_680uh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4rfpj")
+show_percentage = false
+
+[node name="bonus" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_5cim4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wo8nv")
+show_percentage = false
+
+[node name="pause" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" groups=["ui"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_u6xkf")
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_2jx4x")
+text = "X"
+
+[node name="drops" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="pause" type="ColorRect" parent="." groups=["ui"]]
+custom_minimum_size = Vector2(300, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.560784, 0.74902, 0.431373, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="pause/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_colors/font_outline_color = Color(0.294118, 0.207843, 0.164706, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 40
+text = " ПАУЗА "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="continue" type="Button" parent="pause/MarginContainer/VBoxContainer" groups=["ui"]]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme = ExtResource("2_u6xkf")
+text = " ПРОДОЛЖИТЬ "
+
+[node name="collection" type="Button" parent="pause/MarginContainer/VBoxContainer" groups=["ui"]]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme = ExtResource("2_u6xkf")
+text = " КОЛЛЕКЦИЯ "
+
+[node name="exit" type="Button" parent="pause/MarginContainer/VBoxContainer" groups=["ui"]]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme = ExtResource("2_u6xkf")
+text = " ВЫЙТИ "
+
+[node name="fail" type="ColorRect" parent="." groups=["ui"]]
+visible = false
+custom_minimum_size = Vector2(300, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.560784, 0.74902, 0.431373, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="fail"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="fail/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="fail_label" type="Label" parent="fail/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = " :( "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="restart" type="Button" parent="fail/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme = ExtResource("2_u6xkf")
+text = " ЗАНОВО "
+
+[node name="collection" type="Button" parent="fail/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme = ExtResource("2_u6xkf")
+text = " КОЛЛЕКЦИЯ "
+
+[node name="exit" type="Button" parent="fail/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme = ExtResource("2_u6xkf")
+text = " ВЫЙТИ "
+
+[node name="win" type="ColorRect" parent="." groups=["ui"]]
+custom_minimum_size = Vector2(350, 600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.560784, 0.74902, 0.431373, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="win"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 102
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 102
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="win/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="win_label" type="Label" parent="win/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = " :) "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="win/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="win_texture" type="TextureRect" parent="win/MarginContainer/VBoxContainer/ColorRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -85.0
+offset_right = 155.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="restart" type="Button" parent="win/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme = ExtResource("2_u6xkf")
+text = " ЗАНОВО "
+
+[node name="collection" type="Button" parent="win/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme = ExtResource("2_u6xkf")
+text = " КОЛЛЕКЦИЯ "
+
+[node name="exit" type="Button" parent="win/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+theme = ExtResource("2_u6xkf")
+text = " ВЫЙТИ "
+
+[node name="collection" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(600, 550)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -325.0
+offset_right = 300.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.560784, 0.74902, 0.431373, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="collection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="results" type="MarginContainer" parent="collection/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="collection/VBoxContainer/results"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 3
+
+[node name="but1" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/but1"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="but1texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but1/ColorRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="but1label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "butterfly 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="but2" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/but2"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="but2texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but2/ColorRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="but2label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "butterfly 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="but3" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/but3"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="but3texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but3/ColorRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="but3label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "butterfly 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="frog" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/frog"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="frogtexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/frog/ColorRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="froglabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/frog"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "frog"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="beetle" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/beetle"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="beetletexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/beetle/ColorRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="beetlelabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/beetle"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "beetle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hton" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/hton"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="htontexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/hton/ColorRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="htonlabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/hton"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "hton"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="buttons" type="MarginContainer" parent="collection/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="vbox" type="HBoxContainer" parent="collection/VBoxContainer/buttons"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="back" type="Button" parent="collection/VBoxContainer/buttons/vbox"]
+custom_minimum_size = Vector2(100, 35)
+layout_mode = 2
+theme = ExtResource("2_u6xkf")
+text = "назад"
+
+[node name="reset" type="Button" parent="collection/VBoxContainer/buttons/vbox"]
+custom_minimum_size = Vector2(100, 35)
+layout_mode = 2
+theme = ExtResource("2_u6xkf")
+theme_override_font_sizes/font_size = 22
+text = " сброс "
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="pause/MarginContainer/VBoxContainer/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="pause/MarginContainer/VBoxContainer/collection" to="." method="_on_collection_pressed"]
+[connection signal="pressed" from="pause/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="fail/MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="fail/MarginContainer/VBoxContainer/collection" to="." method="_on_collection_pressed"]
+[connection signal="pressed" from="fail/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="win/MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="win/MarginContainer/VBoxContainer/collection" to="." method="_on_collection_pressed"]
+[connection signal="pressed" from="win/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="collection/VBoxContainer/buttons/vbox/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="collection/VBoxContainer/buttons/vbox/reset" to="." method="_on_reset_pressed"]

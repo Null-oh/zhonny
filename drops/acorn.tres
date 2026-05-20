@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Drop" load_steps=4 format=3 uid="uid://ben24dpli5evj"]
+
+[ext_resource type="PackedScene" uid="uid://by21vvmmg3lto" path="res://drops/item_scene.tscn" id="1_d1n71"]
+[ext_resource type="Script" path="res://drops/drop_res.gd" id="2_p5ugu"]
+[ext_resource type="Texture2D" uid="uid://drw8okmvaehe1" path="res://img/acorn_texture.png" id="3_j78ki"]
+
+[resource]
+script = ExtResource("2_p5ugu")
+scene = ExtResource("1_d1n71")
+name = "acorn"
+price = 20
+texture = ExtResource("3_j78ki")

@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bhn337jsa4cxj"]
+
+[ext_resource type="FontFile" uid="uid://b1g365wn3n5ll" path="res://assets/kom-post.ttf" id="1_v3753"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ia6k"]
+bg_color = Color(0.92549, 0.792157, 0.611765, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.886275, 0.682353, 0.407843, 1)
+
+[resource]
+Button/colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+Button/colors/font_disabled_color = Color(0.372549, 0.262745, 0.207843, 1)
+Button/colors/font_pressed_color = Color(0.372549, 0.262745, 0.207843, 1)
+Button/font_sizes/font_size = 28
+Button/fonts/font = ExtResource("1_v3753")
+Button/styles/normal = SubResource("StyleBoxFlat_7ia6k")
