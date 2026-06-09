@@ -10,6 +10,8 @@ extends CharacterBody2D
 
 @onready var total_drops
 
+var direction: Vector2
+
 var target_position: Vector2
 var is_moving : bool = false
 var is_dragging: bool = false
@@ -18,6 +20,7 @@ var stop_distance: float = 1.0
 var start_position: Vector2
 
 func _ready():
+	add_to_group("oparysh")
 	sprite.play("idle")
 	sprite.flip_v = false
 
@@ -50,7 +53,7 @@ func hatch() -> String:
 func _process(delta):
 	speed = Global.speed
 	if is_moving: 
-		var direction = global_position.direction_to(target_position)
+		direction = global_position.direction_to(target_position)
 		velocity = direction * speed
 		if Global.playing:
 			move_and_slide()

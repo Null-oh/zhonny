@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://p4xw6bjn26r1"]
+[gd_scene format=3 uid="uid://p4xw6bjn26r1"]
 
-[ext_resource type="Script" path="res://scripts/start.gd" id="1_nk05v"]
+[ext_resource type="Script" uid="uid://v0fsa831ox5s" path="res://scripts/start.gd" id="1_nk05v"]
 [ext_resource type="Theme" uid="uid://bhn337jsa4cxj" path="res://assets/buttons.tres" id="2_55kkp"]
+[ext_resource type="Texture2D" uid="uid://kn0amprhffq7" path="res://img/back.png" id="2_gsp51"]
 [ext_resource type="Texture2D" uid="uid://r7seb6moqg1w" path="res://img/опарыш_up.png" id="3_71jlf"]
 [ext_resource type="FontFile" uid="uid://b1g365wn3n5ll" path="res://assets/kom-post.ttf" id="3_mwnvy"]
 [ext_resource type="Texture2D" uid="uid://0mg1din4p0b4" path="res://img/bird.png" id="4_cjcql"]
@@ -12,57 +13,76 @@
 [ext_resource type="Texture2D" uid="uid://bprd3o0m8a0pe" path="res://img/mushroom_texture.png" id="9_pkvpt"]
 [ext_resource type="Texture2D" uid="uid://chkoccwk50jxp" path="res://img/raf_texture.png" id="10_1yni7"]
 [ext_resource type="Texture2D" uid="uid://docp4h6tsg6xf" path="res://img/stick_texture.png" id="11_yxqky"]
+[ext_resource type="Texture2D" uid="uid://snmqcx1deh4p" path="res://img/template.png" id="14_r8uic"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_der74"]
-atlas = ExtResource("3_71jlf")
-region = Rect2(0, 0, 10, 15)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1pfr"]
+texture = ExtResource("2_gsp51")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r8lwe"]
-atlas = ExtResource("3_71jlf")
-region = Rect2(10, 0, 10, 15)
+[sub_resource type="TileSet" id="TileSet_x1pfr"]
+tile_size = Vector2i(100, 100)
+sources/1 = SubResource("TileSetAtlasSource_x1pfr")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ygg0k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nvso"]
 atlas = ExtResource("3_71jlf")
-region = Rect2(0, 15, 10, 15)
+region = Rect2(1, 1, 11, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hyq4w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsp51"]
 atlas = ExtResource("3_71jlf")
-region = Rect2(10, 15, 10, 15)
+region = Rect2(13, 1, 11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8uic"]
+atlas = ExtResource("3_71jlf")
+region = Rect2(1, 18, 11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1pfr"]
+atlas = ExtResource("3_71jlf")
+region = Rect2(13, 18, 11, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ry5j8"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_der74")
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_1nvso")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r8lwe")
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_gsp51")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ygg0k")
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_r8uic")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hyq4w")
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_x1pfr")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="start" type="Node2D"]
+[node name="start" type="Node2D" unique_id=1952553840]
 script = ExtResource("1_nk05v")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2076299009]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="back" type="TileMap" parent="CanvasLayer" unique_id=1073581220]
+texture_filter = 1
+position = Vector2(224.00002, 77)
+scale = Vector2(6, 6)
+tile_set = SubResource("TileSet_x1pfr")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 65535, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=907485148]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.560784, 0.74902, 0.431373, 1)
+color = Color(1, 1, 1, 0)
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ColorRect" unique_id=490270189]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,10 +94,48 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/ColorRect/MarginContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/ColorRect/MarginContainer" unique_id=330794230]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2" unique_id=1183117553]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Control" type="Control" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=1103587521]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/Control" unique_id=675144955]
+texture_filter = 1
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_ry5j8")
+frame_progress = 0.0332821
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=945521979]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect" unique_id=837413939]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -224.0
+offset_right = 320.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect/VBoxContainer" unique_id=137222092]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -86,71 +144,49 @@ text = "~ ОПАРЫШ ЖОННИ ~"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2"]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
-
-[node name="Control" type="Control" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/Control"]
-texture_filter = 1
-scale = Vector2(15, 15)
-sprite_frames = SubResource("SpriteFrames_ry5j8")
-frame_progress = 0.0332821
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 25
-
-[node name="start" type="Button" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+[node name="start" type="Button" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect/VBoxContainer" unique_id=786949457]
 layout_mode = 2
 theme = ExtResource("2_55kkp")
 theme_override_font_sizes/font_size = 50
 text = " СТАРТ "
 
-[node name="how_to" type="Button" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+[node name="how_to" type="Button" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect/VBoxContainer" unique_id=40067175]
 layout_mode = 2
 theme = ExtResource("2_55kkp")
 theme_override_font_sizes/font_size = 50
 text = " КАК ИГРАТЬ "
 
-[node name="reset" type="Button" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+[node name="reset" type="Button" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect/VBoxContainer" unique_id=2091484664]
 layout_mode = 2
 theme = ExtResource("2_55kkp")
 theme_override_font_sizes/font_size = 50
 text = " СБРОС "
 
-[node name="collection" type="Button" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+[node name="collection" type="Button" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect/VBoxContainer" unique_id=189100546]
 layout_mode = 2
 theme = ExtResource("2_55kkp")
 theme_override_font_sizes/font_size = 50
 text = "  КОЛЛЕКЦИЯ  "
 
-[node name="exit" type="Button" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+[node name="exit" type="Button" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect/VBoxContainer" unique_id=1422758238]
 layout_mode = 2
 theme = ExtResource("2_55kkp")
 theme_override_font_sizes/font_size = 50
 text = " ВЫХОД "
 
-[node name="Control2" type="Control" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer"]
+[node name="Control2" type="Control" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=1452913163]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/Control2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/Control2" unique_id=1478826056]
 texture_filter = 1
 rotation = 3.14159
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_ry5j8")
 frame_progress = 0.0332821
 
-[node name="collection" type="ColorRect" parent="CanvasLayer"]
+[node name="collection" type="ColorRect" parent="CanvasLayer" unique_id=1506767822]
 visible = false
 custom_minimum_size = Vector2(600, 550)
 anchors_preset = 8
@@ -166,7 +202,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.560784, 0.74902, 0.431373, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/collection"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/collection" unique_id=1157229931]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -175,14 +211,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
-[node name="results" type="MarginContainer" parent="CanvasLayer/collection/VBoxContainer"]
+[node name="results" type="MarginContainer" parent="CanvasLayer/collection/VBoxContainer" unique_id=1459787642]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/collection/VBoxContainer/results"]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/collection/VBoxContainer/results" unique_id=642931533]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -190,21 +226,22 @@ theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 40
 columns = 3
 
-[node name="but1" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer"]
+[node name="but1" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer" unique_id=2095189469]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but1"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but1" unique_id=1323808534]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="but1texture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but1/ColorRect"]
+[node name="but1texture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but1/ColorRect" unique_id=647583760]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="but1label" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but1"]
+[node name="but1label" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but1" unique_id=1640254297]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -213,21 +250,22 @@ text = "butterfly 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="but2" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer"]
+[node name="but2" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer" unique_id=357036678]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but2"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but2" unique_id=1505586302]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="but2texture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but2/ColorRect"]
+[node name="but2texture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but2/ColorRect" unique_id=358597878]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="but2label" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but2"]
+[node name="but2label" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but2" unique_id=1000451266]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -236,21 +274,22 @@ text = "butterfly 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="but3" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer"]
+[node name="but3" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer" unique_id=1607659624]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but3"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but3" unique_id=1738777703]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="but3texture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but3/ColorRect"]
+[node name="but3texture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but3/ColorRect" unique_id=799914400]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="but3label" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but3"]
+[node name="but3label" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/but3" unique_id=478926324]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -259,21 +298,22 @@ text = "butterfly 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="frog" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer"]
+[node name="frog" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer" unique_id=776142881]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/frog"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/frog" unique_id=1735614519]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="frogtexture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/frog/ColorRect"]
+[node name="frogtexture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/frog/ColorRect" unique_id=685611661]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="froglabel" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/frog"]
+[node name="froglabel" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/frog" unique_id=311162173]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -282,21 +322,22 @@ text = "frog"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="beetle" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer"]
+[node name="beetle" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer" unique_id=1246052510]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/beetle"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/beetle" unique_id=1334677450]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="beetletexture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/beetle/ColorRect"]
+[node name="beetletexture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/beetle/ColorRect" unique_id=616382592]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="beetlelabel" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/beetle"]
+[node name="beetlelabel" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/beetle" unique_id=1761938170]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -305,21 +346,22 @@ text = "beetle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="hton" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer"]
+[node name="hton" type="VBoxContainer" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer" unique_id=676324149]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/hton"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/hton" unique_id=1344180677]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="htontexture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/hton/ColorRect"]
+[node name="htontexture" type="TextureRect" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/hton/ColorRect" unique_id=1788173566]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="htonlabel" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/hton"]
+[node name="htonlabel" type="Label" parent="CanvasLayer/collection/VBoxContainer/results/GridContainer/hton" unique_id=1129824399]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -328,7 +370,7 @@ text = "hton"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="buttons" type="MarginContainer" parent="CanvasLayer/collection/VBoxContainer"]
+[node name="buttons" type="MarginContainer" parent="CanvasLayer/collection/VBoxContainer" unique_id=2073651311]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/margin_left = 20
@@ -336,24 +378,25 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="vbox" type="HBoxContainer" parent="CanvasLayer/collection/VBoxContainer/buttons"]
+[node name="vbox" type="HBoxContainer" parent="CanvasLayer/collection/VBoxContainer/buttons" unique_id=1900601600]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="back" type="Button" parent="CanvasLayer/collection/VBoxContainer/buttons/vbox"]
+[node name="back" type="Button" parent="CanvasLayer/collection/VBoxContainer/buttons/vbox" unique_id=1229577394]
 custom_minimum_size = Vector2(100, 35)
 layout_mode = 2
 theme = ExtResource("2_55kkp")
 text = "назад"
 
-[node name="reset" type="Button" parent="CanvasLayer/collection/VBoxContainer/buttons/vbox"]
+[node name="reset" type="Button" parent="CanvasLayer/collection/VBoxContainer/buttons/vbox" unique_id=646755130]
 custom_minimum_size = Vector2(100, 35)
 layout_mode = 2
 theme = ExtResource("2_55kkp")
 text = "сброс"
 
-[node name="how_to" type="ColorRect" parent="CanvasLayer"]
+[node name="how_to" type="ColorRect" parent="CanvasLayer" unique_id=1824883400]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -367,7 +410,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.560784, 0.74902, 0.431373, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/how_to"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/how_to" unique_id=1343462520]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -379,30 +422,30 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 70
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/how_to/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/how_to/MarginContainer" unique_id=229748554]
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="back" type="Button" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer"]
+[node name="back" type="Button" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer" unique_id=439438706]
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("2_55kkp")
 text = " НАЗАД "
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer" unique_id=1499168205]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer" unique_id=120999496]
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=379789890]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -413,7 +456,7 @@ text = "Съешьте как можно больше еды
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1074653420]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 0.745098)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -423,7 +466,7 @@ text = "(Опарышздрав не рекомендует
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=135806223]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 0.470588)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -432,12 +475,12 @@ text = "(даже если это лавандовый раф)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=677772812]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="bird" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control"]
+[node name="bird" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control" unique_id=1962941607]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -457,12 +500,12 @@ texture = ExtResource("4_cjcql")
 stretch_mode = 3
 flip_h = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer" unique_id=13816846]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 100
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1871091206]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -470,49 +513,49 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 3
 
-[node name="Sprite2D" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+[node name="Sprite2D" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer" unique_id=1146532366]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("5_5kn57")
 
-[node name="Sprite2D2" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+[node name="Sprite2D2" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer" unique_id=1203777980]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_egtbm")
 
-[node name="Sprite2D3" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+[node name="Sprite2D3" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer" unique_id=409380676]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("7_2ou6t")
 
-[node name="Sprite2D4" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+[node name="Sprite2D4" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer" unique_id=2136942360]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("8_0vc1e")
 
-[node name="Sprite2D5" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+[node name="Sprite2D5" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer" unique_id=1220836721]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("9_pkvpt")
 
-[node name="Sprite2D6" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+[node name="Sprite2D6" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer" unique_id=84030322]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("10_1yni7")
 
-[node name="Sprite2D7" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer"]
+[node name="Sprite2D7" type="TextureRect" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/GridContainer" unique_id=647730403]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("11_yxqky")
 
-[node name="Label" type="Label" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=725935655]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -522,7 +565,7 @@ text = "Берегитесь птицы
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/how_to/MarginContainer/VBoxContainer" unique_id=1480347983]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_mwnvy")
@@ -531,11 +574,101 @@ text = "(P.S. Если увидите косяки по части график�
 (честно) Т_Т )"
 vertical_alignment = 1
 
-[connection signal="pressed" from="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/how_to" to="." method="_on_how_to_pressed"]
-[connection signal="pressed" from="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/reset" to="." method="_on_reset_pressed"]
-[connection signal="pressed" from="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/collection" to="." method="_on_collection_pressed"]
-[connection signal="pressed" from="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[node name="menu" type="Control" parent="CanvasLayer" unique_id=1550867066]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/menu" unique_id=1263485175]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/menu/MarginContainer" unique_id=1239737371]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/menu/MarginContainer/HBoxContainer" unique_id=279118432]
+texture_filter = 1
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_ry5j8")
+frame_progress = 0.0332821
+
+[node name="buttons" type="NinePatchRect" parent="CanvasLayer/menu/MarginContainer/HBoxContainer" unique_id=1742475280]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("14_r8uic")
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/menu/MarginContainer/HBoxContainer/buttons" unique_id=1201752701]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/menu/MarginContainer/HBoxContainer/buttons/VBoxContainer" unique_id=819158862]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
+theme_override_fonts/font = ExtResource("3_mwnvy")
+theme_override_font_sizes/font_size = 80
+text = "~ ОПАРЫШ ЖОННИ ~"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="start" type="Button" parent="CanvasLayer/menu/MarginContainer/HBoxContainer/buttons/VBoxContainer" unique_id=1386500893]
+layout_mode = 2
+theme = ExtResource("2_55kkp")
+theme_override_font_sizes/font_size = 50
+text = " СТАРТ "
+
+[node name="how_to" type="Button" parent="CanvasLayer/menu/MarginContainer/HBoxContainer/buttons/VBoxContainer" unique_id=346514795]
+layout_mode = 2
+theme = ExtResource("2_55kkp")
+theme_override_font_sizes/font_size = 50
+text = " КАК ИГРАТЬ "
+
+[node name="reset" type="Button" parent="CanvasLayer/menu/MarginContainer/HBoxContainer/buttons/VBoxContainer" unique_id=917032046]
+layout_mode = 2
+theme = ExtResource("2_55kkp")
+theme_override_font_sizes/font_size = 50
+text = " СБРОС "
+
+[node name="collection" type="Button" parent="CanvasLayer/menu/MarginContainer/HBoxContainer/buttons/VBoxContainer" unique_id=1000284956]
+layout_mode = 2
+theme = ExtResource("2_55kkp")
+theme_override_font_sizes/font_size = 50
+text = "  КОЛЛЕКЦИЯ  "
+
+[node name="exit" type="Button" parent="CanvasLayer/menu/MarginContainer/HBoxContainer/buttons/VBoxContainer" unique_id=1343243465]
+layout_mode = 2
+theme = ExtResource("2_55kkp")
+theme_override_font_sizes/font_size = 50
+text = " ВЫХОД "
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/menu/MarginContainer/HBoxContainer" unique_id=1863152661]
+texture_filter = 1
+position = Vector2(4, 0)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_ry5j8")
+frame_progress = 0.0332821
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect/VBoxContainer/how_to" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect/VBoxContainer/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect/VBoxContainer/collection" to="." method="_on_collection_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/MarginContainer/VBoxContainer2/HBoxContainer/ColorRect/VBoxContainer/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="CanvasLayer/collection/VBoxContainer/buttons/vbox/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="CanvasLayer/collection/VBoxContainer/buttons/vbox/reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="CanvasLayer/how_to/MarginContainer/VBoxContainer/back" to="." method="_on_back_pressed"]

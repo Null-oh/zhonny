@@ -1,7 +1,11 @@
 #это глобал
 extends Node
 
-var playing : bool = false
+signal playing_changed(new_value)
+var playing : bool = false:
+	set(value):
+		playing = value
+		playing_changed.emit(value)
 
 var map_height : int
 var map_width : int

@@ -1,0 +1,333 @@
+[gd_scene format=3 uid="uid://sl0ommyd2rc6"]
+
+[ext_resource type="Script" uid="uid://85b2i60q2y58" path="res://scripts/menus.gd" id="1_dbhjr"]
+[ext_resource type="Texture2D" uid="uid://snmqcx1deh4p" path="res://img/template.png" id="1_dve7u"]
+[ext_resource type="Texture2D" uid="uid://r7seb6moqg1w" path="res://img/опарыш_up.png" id="2_ou0nh"]
+[ext_resource type="FontFile" uid="uid://b1g365wn3n5ll" path="res://assets/kom-post.ttf" id="3_ugpjx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nvso"]
+atlas = ExtResource("2_ou0nh")
+region = Rect2(1, 1, 11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsp51"]
+atlas = ExtResource("2_ou0nh")
+region = Rect2(13, 1, 11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8uic"]
+atlas = ExtResource("2_ou0nh")
+region = Rect2(1, 18, 11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1pfr"]
+atlas = ExtResource("2_ou0nh")
+region = Rect2(13, 18, 11, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ugpjx"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_1nvso")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_gsp51")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_r8uic")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_x1pfr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ou0nh"]
+texture = ExtResource("1_dve7u")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ugpjx"]
+texture = ExtResource("1_dve7u")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[node name="menus" type="CanvasLayer" unique_id=354323044]
+script = ExtResource("1_dbhjr")
+
+[node name="main" type="MarginContainer" parent="." unique_id=1110323946]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="NinePatchRect" type="NinePatchRect" parent="main" unique_id=518177093]
+texture_filter = 1
+custom_minimum_size = Vector2(650, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_dve7u")
+region_rect = Rect2(0, 128, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main/NinePatchRect" unique_id=1794486146]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -172.5
+offset_right = 104.0
+offset_bottom = 172.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="title1" type="Label" parent="main/NinePatchRect/VBoxContainer" unique_id=446334931]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_shadow_color = Color(0.6745098, 0.4745098, 0.23529412, 1)
+theme_override_colors/font_outline_color = Color(0.78039217, 0.59607846, 0.36862746, 1)
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 55
+text = "Опарыш Жоня"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="main/NinePatchRect/VBoxContainer" unique_id=1990605487]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 150
+
+[node name="Control" type="Control" parent="main/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=44646452]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="main/NinePatchRect/VBoxContainer/HBoxContainer/Control" unique_id=1859257397]
+texture_filter = 1
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_ugpjx")
+frame_progress = 0.08076771
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=194383841]
+custom_minimum_size = Vector2(150, 300)
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="start" type="Button" parent="main/NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1380732496]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_ou0nh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ugpjx")
+text = "СТАРТ"
+
+[node name="how_to" type="Button" parent="main/NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1881305618]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_ou0nh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ugpjx")
+text = " КАК ИГРАТЬ "
+
+[node name="collection" type="Button" parent="main/NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1661483496]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_ou0nh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ugpjx")
+text = " КОЛЛЕКЦИЯ "
+
+[node name="exit" type="Button" parent="main/NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=997555698]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_ou0nh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ugpjx")
+text = "ВЫХОД"
+
+[node name="collection" type="MarginContainer" parent="." unique_id=415956931]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="collection" unique_id=395554263]
+texture_filter = 1
+custom_minimum_size = Vector2(650, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_dve7u")
+region_rect = Rect2(0, 128, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="collection/NinePatchRect" unique_id=1439752436]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="collection/NinePatchRect/MarginContainer" unique_id=659375557]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="temp" type="ColorRect" parent="collection/NinePatchRect/MarginContainer/VBoxContainer" unique_id=482578420]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="collection/NinePatchRect/MarginContainer/VBoxContainer" unique_id=704599884]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+
+[node name="back" type="Button" parent="collection/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1624536766]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_ou0nh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ugpjx")
+text = " НАЗАД "
+
+[node name="reset" type="Button" parent="collection/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=931231617]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_ou0nh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ugpjx")
+text = " СБРОС "
+
+[node name="how_to" type="MarginContainer" parent="." unique_id=155608405]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="how_to" unique_id=832738351]
+texture_filter = 1
+custom_minimum_size = Vector2(650, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_dve7u")
+region_rect = Rect2(0, 128, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="how_to/NinePatchRect" unique_id=746850287]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="how_to/NinePatchRect/MarginContainer" unique_id=1006967483]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="temp" type="ColorRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer" unique_id=835947548]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer" unique_id=503148525]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+
+[node name="back" type="Button" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=462294331]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_ou0nh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ugpjx")
+text = " НАЗАД "
+
+[node name="credits" type="MarginContainer" parent="." unique_id=36925096]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="main/NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="main/NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer/how_to" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="main/NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer/collection" to="." method="_on_collection_pressed"]
+[connection signal="pressed" from="main/NinePatchRect/VBoxContainer/HBoxContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="collection/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="collection/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="how_to/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/back" to="." method="_on_back_pressed"]

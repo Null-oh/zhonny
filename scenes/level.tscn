@@ -1,11 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://bpuauwxv8gcpl"]
+[gd_scene format=3 uid="uid://bpuauwxv8gcpl"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_vylwx"]
+[ext_resource type="Script" uid="uid://btltldt1yfu7w" path="res://scripts/level.gd" id="1_vylwx"]
 [ext_resource type="PackedScene" uid="uid://c7dclychy2f4k" path="res://scenes/tiles.tscn" id="2_hjrcn"]
 [ext_resource type="PackedScene" uid="uid://b427bdcyeo3j1" path="res://assets/oparysh.tscn" id="2_xrl0k"]
 [ext_resource type="PackedScene" uid="uid://bu16vdwyjpme" path="res://assets/spawner.tscn" id="4_v4nd4"]
 [ext_resource type="Resource" uid="uid://dl7q3mexng170" path="res://drops/leaf.tres" id="5_myo3r"]
-[ext_resource type="Script" path="res://drops/drop_slot.gd" id="5_pccjk"]
+[ext_resource type="Script" uid="uid://d061ep0kq34n" path="res://drops/drop_slot.gd" id="5_pccjk"]
 [ext_resource type="Resource" uid="uid://dl1j2nkuhav4q" path="res://drops/stick.tres" id="7_7qurs"]
 [ext_resource type="Resource" uid="uid://cvfpjw0deslum" path="res://drops/flower.tres" id="8_jd3cl"]
 [ext_resource type="Resource" uid="uid://c58ob2e2fiioi" path="res://drops/berry.tres" id="9_08fy2"]
@@ -49,17 +49,17 @@ script = ExtResource("5_pccjk")
 drop = ExtResource("12_q83g0")
 quantity = 10
 
-[node name="level" type="Node2D"]
+[node name="level" type="Node2D" unique_id=426426017]
 script = ExtResource("1_vylwx")
 
-[node name="tiles" parent="." instance=ExtResource("2_hjrcn")]
+[node name="tiles" parent="." unique_id=1517991931 instance=ExtResource("2_hjrcn")]
 
-[node name="oparysh" parent="." instance=ExtResource("2_xrl0k")]
+[node name="oparysh" parent="." unique_id=418901268 instance=ExtResource("2_xrl0k")]
 
-[node name="Camera2D" type="Camera2D" parent="oparysh"]
+[node name="Camera2D" type="Camera2D" parent="oparysh" unique_id=899384646]
 zoom = Vector2(7, 7)
 
-[node name="spawner" parent="." instance=ExtResource("4_v4nd4")]
+[node name="spawner" parent="." unique_id=1826277945 instance=ExtResource("4_v4nd4")]
 drops = Array[ExtResource("5_pccjk")]([SubResource("Resource_a2q8i"), SubResource("Resource_hfk6m"), SubResource("Resource_vqpdq"), SubResource("Resource_rk22o"), SubResource("Resource_p573x"), SubResource("Resource_ykgt6"), SubResource("Resource_qeaqr")])
 
-[node name="interface" parent="." instance=ExtResource("13_n63tf")]
+[node name="interface" parent="." unique_id=456038138 instance=ExtResource("13_n63tf")]

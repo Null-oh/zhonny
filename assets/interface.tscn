@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccmk8700wohmm"]
+[gd_scene format=3 uid="uid://ccmk8700wohmm"]
 
-[ext_resource type="Script" path="res://scripts/interface.gd" id="1_3bmk6"]
-[ext_resource type="Theme" uid="uid://bhn337jsa4cxj" path="res://assets/buttons.tres" id="2_u6xkf"]
+[ext_resource type="Script" uid="uid://dw51hfta7m4ff" path="res://scripts/interface.gd" id="1_3bmk6"]
 [ext_resource type="FontFile" uid="uid://b1g365wn3n5ll" path="res://assets/kom-post.ttf" id="3_qsspc"]
+[ext_resource type="Texture2D" uid="uid://snmqcx1deh4p" path="res://img/template.png" id="4_ne1gv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_680uh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -26,18 +26,170 @@ border_color = Color(0.239216, 0.270588, 0.694118, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo8nv"]
 bg_color = Color(0.239216, 0.270588, 0.694118, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jx4x"]
-bg_color = Color(0.439216, 0.654902, 0.286275, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.329412, 0.490196, 0.215686, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52ixo"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 0, 64, 64)
 
-[node name="interface" type="CanvasLayer"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y4nly"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(128, 0, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jfoas"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6gh3"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ne1gv"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ypa67"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6bma"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqk7w"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3y3g"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wr02n"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nf4dj"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0d61"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(128, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2xn1g"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 128, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywl2n"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 128, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_loy0k"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wc5vg"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jrr5l"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0fbr3"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8c62r"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmq2t"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[node name="interface" type="CanvasLayer" unique_id=1279431283]
 script = ExtResource("1_3bmk6")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1370762389]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -48,16 +200,16 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2128433619]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=812317230]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="info" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="info" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1277978397]
 custom_minimum_size = Vector2(70, 45)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
@@ -67,19 +219,19 @@ text = " bonus "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=523710579]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="timer" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="timer" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=83103912]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_680uh")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4rfpj")
 show_percentage = false
 
-[node name="bonus" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="bonus" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1100180355]
 custom_minimum_size = Vector2(500, 30)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -88,39 +240,48 @@ theme_override_styles/background = SubResource("StyleBoxFlat_5cim4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_wo8nv")
 show_percentage = false
 
-[node name="pause" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" groups=["ui"]]
+[node name="pause" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1347229039 groups=["ui"]]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("2_u6xkf")
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_2jx4x")
-text = "X"
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_52ixo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y4nly")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y4nly")
+text = "х"
 
-[node name="drops" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="drops" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=904859006]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="pause" type="ColorRect" parent="." groups=["ui"]]
+[node name="pause" type="NinePatchRect" parent="." unique_id=1248204558 groups=["ui"]]
 custom_minimum_size = Vector2(300, 400)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.560784, 0.74902, 0.431373, 1)
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(64, 0, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
-[node name="MarginContainer" type="MarginContainer" parent="pause"]
+[node name="MarginContainer" type="MarginContainer" parent="pause" unique_id=1248924167]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -132,13 +293,13 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="pause/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="pause/MarginContainer" unique_id=2075843189]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 
-[node name="Label" type="Label" parent="pause/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="pause/MarginContainer/VBoxContainer" unique_id=534514989]
 texture_filter = 1
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
@@ -146,33 +307,60 @@ theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_colors/font_outline_color = Color(0.294118, 0.207843, 0.164706, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_qsspc")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = " ПАУЗА "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="continue" type="Button" parent="pause/MarginContainer/VBoxContainer" groups=["ui"]]
+[node name="continue" type="Button" parent="pause/MarginContainer/VBoxContainer" unique_id=1368690203 groups=["ui"]]
 texture_filter = 1
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
-theme = ExtResource("2_u6xkf")
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_jfoas")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c6gh3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ne1gv")
 text = " ПРОДОЛЖИТЬ "
 
-[node name="collection" type="Button" parent="pause/MarginContainer/VBoxContainer" groups=["ui"]]
+[node name="collection" type="Button" parent="pause/MarginContainer/VBoxContainer" unique_id=323682123 groups=["ui"]]
 texture_filter = 1
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
-theme = ExtResource("2_u6xkf")
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_ypa67")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c6bma")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dqk7w")
 text = " КОЛЛЕКЦИЯ "
 
-[node name="exit" type="Button" parent="pause/MarginContainer/VBoxContainer" groups=["ui"]]
+[node name="exit" type="Button" parent="pause/MarginContainer/VBoxContainer" unique_id=605659484 groups=["ui"]]
 texture_filter = 1
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
-theme = ExtResource("2_u6xkf")
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3y3g")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wr02n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nf4dj")
 text = " ВЫЙТИ "
 
-[node name="fail" type="ColorRect" parent="." groups=["ui"]]
+[node name="fail" type="NinePatchRect" parent="." unique_id=1933838567 groups=["ui"]]
 visible = false
 custom_minimum_size = Vector2(300, 400)
 anchors_preset = 8
@@ -180,15 +368,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.560784, 0.74902, 0.431373, 1)
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(64, 128, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
-[node name="MarginContainer" type="MarginContainer" parent="fail"]
+[node name="MarginContainer" type="MarginContainer" parent="fail" unique_id=574368686]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -200,59 +393,86 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="VBoxContainer" type="VBoxContainer" parent="fail/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="fail/MarginContainer" unique_id=2028227459]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 
-[node name="fail_label" type="Label" parent="fail/MarginContainer/VBoxContainer"]
+[node name="fail_label" type="Label" parent="fail/MarginContainer/VBoxContainer" unique_id=123560062]
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_qsspc")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 32
 text = " :( "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="restart" type="Button" parent="fail/MarginContainer/VBoxContainer"]
+[node name="restart" type="Button" parent="fail/MarginContainer/VBoxContainer" unique_id=736303048]
 texture_filter = 1
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
-theme = ExtResource("2_u6xkf")
+theme_override_colors/font_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_outline_color = Color(0.6745098, 0.4745098, 0.23529412, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_p0d61")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2xn1g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ywl2n")
 text = " ЗАНОВО "
 
-[node name="collection" type="Button" parent="fail/MarginContainer/VBoxContainer"]
+[node name="collection" type="Button" parent="fail/MarginContainer/VBoxContainer" unique_id=1414539359]
 texture_filter = 1
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
-theme = ExtResource("2_u6xkf")
+theme_override_colors/font_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_outline_color = Color(0.6745098, 0.4745098, 0.23529412, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_p0d61")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2xn1g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ywl2n")
 text = " КОЛЛЕКЦИЯ "
 
-[node name="exit" type="Button" parent="fail/MarginContainer/VBoxContainer"]
+[node name="exit" type="Button" parent="fail/MarginContainer/VBoxContainer" unique_id=744438238]
 texture_filter = 1
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
-theme = ExtResource("2_u6xkf")
+theme_override_colors/font_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_outline_color = Color(0.6745098, 0.4745098, 0.23529412, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_p0d61")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2xn1g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ywl2n")
 text = " ВЫЙТИ "
 
-[node name="win" type="ColorRect" parent="." groups=["ui"]]
+[node name="win" type="NinePatchRect" parent="." unique_id=250311506 groups=["ui"]]
+visible = false
 custom_minimum_size = Vector2(350, 600)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -175.0
+offset_top = -300.0
+offset_right = 175.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.560784, 0.74902, 0.431373, 1)
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(64, 0, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
-[node name="MarginContainer" type="MarginContainer" parent="win"]
+[node name="MarginContainer" type="MarginContainer" parent="win" unique_id=1353606745]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -264,29 +484,29 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 102
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="win/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="win/MarginContainer" unique_id=1642126584]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 
-[node name="win_label" type="Label" parent="win/MarginContainer/VBoxContainer"]
+[node name="win_label" type="Label" parent="win/MarginContainer/VBoxContainer" unique_id=2047660871]
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_qsspc")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 60
 text = " :) "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="win/MarginContainer/VBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="win/MarginContainer/VBoxContainer" unique_id=1123702840]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(1, 1, 1, 0)
 
-[node name="win_texture" type="TextureRect" parent="win/MarginContainer/VBoxContainer/ColorRect"]
+[node name="win_texture" type="TextureRect" parent="win/MarginContainer/VBoxContainer/ColorRect" unique_id=625150446]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -301,29 +521,55 @@ offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="restart" type="Button" parent="win/MarginContainer/VBoxContainer"]
+[node name="restart" type="Button" parent="win/MarginContainer/VBoxContainer" unique_id=1182118083]
 texture_filter = 1
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
-theme = ExtResource("2_u6xkf")
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_loy0k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wc5vg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jrr5l")
 text = " ЗАНОВО "
 
-[node name="collection" type="Button" parent="win/MarginContainer/VBoxContainer"]
+[node name="collection" type="Button" parent="win/MarginContainer/VBoxContainer" unique_id=240592020]
 texture_filter = 1
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
-theme = ExtResource("2_u6xkf")
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_loy0k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wc5vg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jrr5l")
 text = " КОЛЛЕКЦИЯ "
 
-[node name="exit" type="Button" parent="win/MarginContainer/VBoxContainer"]
+[node name="exit" type="Button" parent="win/MarginContainer/VBoxContainer" unique_id=813029609]
 texture_filter = 1
 custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
-theme = ExtResource("2_u6xkf")
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_loy0k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wc5vg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jrr5l")
 text = " ВЫЙТИ "
 
-[node name="collection" type="ColorRect" parent="."]
-visible = false
+[node name="collection" type="NinePatchRect" parent="." unique_id=1120614769]
 custom_minimum_size = Vector2(600, 550)
 anchors_preset = 8
 anchor_left = 0.5
@@ -336,9 +582,14 @@ offset_right = 300.0
 offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.560784, 0.74902, 0.431373, 1)
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(64, 0, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="collection"]
+[node name="VBoxContainer" type="VBoxContainer" parent="collection" unique_id=477525344]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -347,14 +598,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
-[node name="results" type="MarginContainer" parent="collection/VBoxContainer"]
+[node name="results" type="MarginContainer" parent="collection/VBoxContainer" unique_id=697323020]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="GridContainer" type="GridContainer" parent="collection/VBoxContainer/results"]
+[node name="GridContainer" type="GridContainer" parent="collection/VBoxContainer/results" unique_id=1521703386]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -362,21 +613,22 @@ theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 40
 columns = 3
 
-[node name="but1" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+[node name="but1" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer" unique_id=1898558087]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/but1"]
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/but1" unique_id=2014144399]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="but1texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but1/ColorRect"]
+[node name="but1texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but1/ColorRect" unique_id=627336966]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="but1label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but1"]
+[node name="but1label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but1" unique_id=1179210843]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_qsspc")
@@ -385,21 +637,22 @@ text = "butterfly 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="but2" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+[node name="but2" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer" unique_id=1017151699]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/but2"]
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/but2" unique_id=867595149]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="but2texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but2/ColorRect"]
+[node name="but2texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but2/ColorRect" unique_id=1963557541]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="but2label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but2"]
+[node name="but2label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but2" unique_id=1755816726]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_qsspc")
@@ -408,21 +661,22 @@ text = "butterfly 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="but3" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+[node name="but3" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer" unique_id=2073666726]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/but3"]
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/but3" unique_id=1457053732]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="but3texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but3/ColorRect"]
+[node name="but3texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but3/ColorRect" unique_id=1130731484]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="but3label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but3"]
+[node name="but3label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but3" unique_id=857933322]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_qsspc")
@@ -431,21 +685,22 @@ text = "butterfly 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="frog" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+[node name="frog" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer" unique_id=1442334432]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/frog"]
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/frog" unique_id=1196016026]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="frogtexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/frog/ColorRect"]
+[node name="frogtexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/frog/ColorRect" unique_id=1576682809]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="froglabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/frog"]
+[node name="froglabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/frog" unique_id=1464183083]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_qsspc")
@@ -454,21 +709,22 @@ text = "frog"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="beetle" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+[node name="beetle" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer" unique_id=304393843]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/beetle"]
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/beetle" unique_id=774214750]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="beetletexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/beetle/ColorRect"]
+[node name="beetletexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/beetle/ColorRect" unique_id=66337137]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="beetlelabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/beetle"]
+[node name="beetlelabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/beetle" unique_id=1972881044]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_qsspc")
@@ -477,21 +733,22 @@ text = "beetle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="hton" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer"]
+[node name="hton" type="VBoxContainer" parent="collection/VBoxContainer/results/GridContainer" unique_id=701698585]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/hton"]
+[node name="ColorRect" type="ColorRect" parent="collection/VBoxContainer/results/GridContainer/hton" unique_id=1698301231]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 color = Color(0.92549, 0.792157, 0.611765, 1)
 
-[node name="htontexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/hton/ColorRect"]
+[node name="htontexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/hton/ColorRect" unique_id=820383590]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="htonlabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/hton"]
+[node name="htonlabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/hton" unique_id=509779458]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_qsspc")
@@ -500,7 +757,7 @@ text = "hton"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="buttons" type="MarginContainer" parent="collection/VBoxContainer"]
+[node name="buttons" type="MarginContainer" parent="collection/VBoxContainer" unique_id=1626572508]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/margin_left = 20
@@ -508,22 +765,39 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="vbox" type="HBoxContainer" parent="collection/VBoxContainer/buttons"]
+[node name="vbox" type="HBoxContainer" parent="collection/VBoxContainer/buttons" unique_id=1688541373]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="back" type="Button" parent="collection/VBoxContainer/buttons/vbox"]
+[node name="back" type="Button" parent="collection/VBoxContainer/buttons/vbox" unique_id=1416333221]
 custom_minimum_size = Vector2(100, 35)
 layout_mode = 2
-theme = ExtResource("2_u6xkf")
-text = "назад"
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_0fbr3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8c62r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vmq2t")
+text = " назад "
 
-[node name="reset" type="Button" parent="collection/VBoxContainer/buttons/vbox"]
+[node name="reset" type="Button" parent="collection/VBoxContainer/buttons/vbox" unique_id=77674396]
 custom_minimum_size = Vector2(100, 35)
 layout_mode = 2
-theme = ExtResource("2_u6xkf")
-theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_0fbr3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8c62r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vmq2t")
 text = " сброс "
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/pause" to="." method="_on_pause_pressed"]

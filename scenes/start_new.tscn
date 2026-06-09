@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://blr0n0f07iuq7"]
+
+[ext_resource type="Texture2D" uid="uid://kn0amprhffq7" path="res://img/back.png" id="1_pa3yd"]
+[ext_resource type="PackedScene" uid="uid://sl0ommyd2rc6" path="res://scenes/menus.tscn" id="2_pa3yd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t0o7s"]
+texture = ExtResource("1_pa3yd")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sek6d"]
+tile_size = Vector2i(100, 100)
+sources/1 = SubResource("TileSetAtlasSource_t0o7s")
+
+[node name="StartNew" type="Node2D" unique_id=1748544111]
+
+[node name="back" type="TileMap" parent="." unique_id=2126973299]
+texture_filter = 1
+scale = Vector2(5, 5)
+tile_set = SubResource("TileSet_sek6d")
+format = 2
+layer_0/tile_data = PackedInt32Array(2, 1, 0, 1, 1, 0, 0, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0)
+
+[node name="menus" parent="." unique_id=184873437 instance=ExtResource("2_pa3yd")]

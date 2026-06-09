@@ -1,26 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://cki2q3fciovrp"]
+[gd_scene format=3 uid="uid://cki2q3fciovrp"]
 
-[ext_resource type="Script" path="res://assets/bird.gd" id="1_wm5e6"]
+[ext_resource type="Script" uid="uid://dr0dbinjprj6h" path="res://assets/bird.gd" id="1_wm5e6"]
 [ext_resource type="Texture2D" uid="uid://ddx0aijf01spq" path="res://img/shadow.png" id="2_yq1fu"]
 [ext_resource type="Texture2D" uid="uid://0mg1din4p0b4" path="res://img/bird.png" id="3_aihjg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2w6uk"]
+radius = 16.0
 
-[node name="bird" type="Node2D"]
+[node name="bird" type="Node2D" unique_id=662306434]
 script = ExtResource("1_wm5e6")
 
-[node name="shadow" type="Sprite2D" parent="."]
+[node name="shadow" type="Sprite2D" parent="." unique_id=245738914]
 texture_filter = 1
 texture = ExtResource("2_yq1fu")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="shadow" unique_id=1202651452]
 texture_filter = 1
-position = Vector2(0, -64)
 texture = ExtResource("3_aihjg")
+offset = Vector2(0, -64)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="shadow" unique_id=1966148050]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shadow/Area2D" unique_id=616635316]
 shape = SubResource("CircleShape2D_2w6uk")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="shadow/Area2D" to="." method="_on_area_2d_body_entered"]
