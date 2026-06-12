@@ -56,7 +56,7 @@ func shadow_animation():
 		
 		if oparysh.velocity.length() > 0:
 			var offset_direction = oparysh.direction
-			var target_position = oparysh.global_position + (offset_direction * 21)
+			var target_position = oparysh.global_position + (offset_direction * 25)
 			
 			var move_tween = create_tween()
 			move_tween.tween_property(shadow, "global_position", target_position, 0.1)\

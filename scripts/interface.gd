@@ -70,6 +70,8 @@ var bonus_active : bool = false
 var active_tweens : Array[Tween] = []
 var is_paused : bool = false
 
+var winning = false
+
 func _ready():
 	pocket_button.add_to_group("ui")
 	info.text = ""
@@ -146,9 +148,11 @@ func _process(delta):
 	
 	if timer.value == Global.max_eaten and Global.playing:
 		won()
+		return
 	
 	if Global.health <= 0:
 		failed()
+		return
 	
 	#write()
 
@@ -212,51 +216,74 @@ func failed():
 	fail_label.text = "ВАС СОЖРАЛИ..."
 
 func won():
+	if winning:
+		return
+	
+	
+	print("won() called")
+	winning = true
+	
 	win_texture.visible = true
 	
 	var result : String
-	Global.playing = false
+	
 	if oparysh and oparysh.has_method("hatch"):
+		
+		if oparysh.has_method("play_hatch_animation"):
+			print("starting hatch animation")
+			await oparysh.play_hatch_animation()
+			print("hatch animation complete")
+		
+		Global.playing = false
 		result = oparysh.hatch()
 		print("hatch result: ", result)
 	
+	else:
+		print("oparysh gde")
+		return
+	
 	match result:
 		"but1":
-			win_label.text = "ВЫ СТАЛИ\nМАЛЕНЬКОЙ БАБЧКОЙ!"
+			win_label.text = "ЖОНЯ СТАЛ\nМАЛЕНЬКОЙ БАБЧКОЙ!"
 			win_texture.texture = preload("res://img/but1.png")
 			Global.add_pocket("but1")
 		"but2": 
-			win_label.text = "ВЫ СТАЛИ\nБОЛЬШОЙ БАБЧКОЙ!"
+			win_label.text = "ЖОНЯ СТАЛ\nБОЛЬШОЙ БАБЧКОЙ!"
 			win_texture.texture = preload("res://img/but2.png")
 			Global.add_pocket("but2")
 		"but3": 
-			win_label.text = "ВЫ СТАЛИ\nПАФОСНОЙ БАБЧКОЙ!"
+			win_label.text = "ЖОНЯ СТАЛ\nПАФОСНОЙ БАБЧКОЙ!"
 			win_texture.texture = preload("res://img/but3.png")
 			Global.add_pocket("but3")
 		"beetle": 
-			win_label.text = "ВЫ СТАЛИ\nМАЙСКИМ ЖУЧОМ!"
+			win_label.text = "ЖОНЯ СТАЛ\nМАЙСКИМ ЖУЧОМ!"
 			win_texture.texture = preload("res://img/beetle.png")
 			Global.add_pocket("beetle")
 		"frog":
-			win_label.text = "ВЫ СТАЛИ\nЛЕГУЧКОЙ!"
+			win_label.text = "ЖОНЯ СТАЛ\nЛЕГУЧКОЙ!"
 			win_texture.texture = preload("res://img/frog.png")
 			Global.add_pocket("frog")
 		"hton": 
-			win_label.text = "ВЫ СТАЛИ\nХТОНИЧЕСКИМ НЕФОРОМ!"
+			win_label.text = "ЖОНЯ СТАЛ\nХТОНИЧЕСКИМ НЕФОРОМ!"
 			win_texture.texture = preload("res://img/hton.png")
 			Global.add_pocket("hton")
 		"explode": 
-			win_label.text = "ВЫ ОБОЖРАЛИСЬ\nИ ЛОПНУЛИ..."
+			win_label.text = "ЖОНЯ ОБОЖРАЛСЯ\nИ ЛОПНУЛ..."
 			win_texture.visible = false
 		"starve":
-			win_label.text = "В СЛЕДУЮЩИЙ РАЗ\nКУШАЙТЕ ПОЛЕЗНОЕ..."
+			win_label.text = "В СЛЕДУЮЩИЙ РАЗ\nКОРМИТЕ ЖОНЮ\nЛУЧШЕ..."
 			win_texture.visible = false
 	
 	Global.add_result(result)
 	print("Global.results: ", Global.results)
 	update_collection()
 	load_pockets()
+	
+	
 	win.visible = true
+	var oparysh_light = oparysh.get_node("light")
+	var tween = create_tween()
+	tween.tween_property(oparysh_light, "energy", 0.0, 0.2)
 
 func setup_texture(texture_rect: TextureRect):
 	var color_rect = texture_rect.get_parent()

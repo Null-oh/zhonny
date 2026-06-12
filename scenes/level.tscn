@@ -6,24 +6,57 @@
 [ext_resource type="PackedScene" uid="uid://bu16vdwyjpme" path="res://assets/spawner.tscn" id="4_v4nd4"]
 [ext_resource type="Resource" uid="uid://dl7q3mexng170" path="res://drops/leaf.tres" id="5_myo3r"]
 [ext_resource type="Script" uid="uid://d061ep0kq34n" path="res://drops/drop_slot.gd" id="5_pccjk"]
+[ext_resource type="Resource" uid="uid://dl1j2nkuhav4q" path="res://drops/stick.tres" id="8_64w2a"]
+[ext_resource type="Resource" uid="uid://cvfpjw0deslum" path="res://drops/flower.tres" id="9_fpun6"]
 [ext_resource type="Resource" uid="uid://cic2ryidd25op" path="res://drops/mushroom.tres" id="10_5xatw"]
+[ext_resource type="Resource" uid="uid://c58ob2e2fiioi" path="res://drops/berry.tres" id="10_wc255"]
 [ext_resource type="Resource" uid="uid://ben24dpli5evj" path="res://drops/acorn.tres" id="11_weudl"]
+[ext_resource type="Resource" uid="uid://gmmmp3o32cm5" path="res://drops/raf.tres" id="12_arp2o"]
 [ext_resource type="PackedScene" uid="uid://ccmk8700wohmm" path="res://assets/interface.tscn" id="13_n63tf"]
 
 [sub_resource type="Resource" id="Resource_a2q8i"]
 script = ExtResource("5_pccjk")
 drop = ExtResource("5_myo3r")
-quantity = 50
-
-[sub_resource type="Resource" id="Resource_p573x"]
-script = ExtResource("5_pccjk")
-drop = ExtResource("10_5xatw")
-quantity = 50
+quantity = 20
 
 [sub_resource type="Resource" id="Resource_ykgt6"]
 script = ExtResource("5_pccjk")
 drop = ExtResource("11_weudl")
-quantity = 50
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_ux5qa"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("8_64w2a")
+quantity = 20
+metadata/_custom_type_script = "uid://d061ep0kq34n"
+
+[sub_resource type="Resource" id="Resource_82cfe"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("9_fpun6")
+quantity = 15
+metadata/_custom_type_script = "uid://d061ep0kq34n"
+
+[sub_resource type="Resource" id="Resource_gunhw"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("10_wc255")
+quantity = 10
+metadata/_custom_type_script = "uid://d061ep0kq34n"
+
+[sub_resource type="Resource" id="Resource_8gofh"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("10_5xatw")
+quantity = 7
+metadata/_custom_type_script = "uid://d061ep0kq34n"
+
+[sub_resource type="Resource" id="Resource_h6wmr"]
+script = ExtResource("5_pccjk")
+drop = ExtResource("12_arp2o")
+quantity = 5
+metadata/_custom_type_script = "uid://d061ep0kq34n"
+
+[sub_resource type="Environment" id="Environment_b121j"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_8c41q"]
 
 [node name="level" type="Node2D" unique_id=426426017]
 script = ExtResource("1_vylwx")
@@ -36,9 +69,13 @@ script = ExtResource("1_vylwx")
 zoom = Vector2(7, 7)
 
 [node name="spawner" parent="." unique_id=1826277945 instance=ExtResource("4_v4nd4")]
-drops = Array[ExtResource("5_pccjk")]([SubResource("Resource_a2q8i"), SubResource("Resource_p573x"), SubResource("Resource_ykgt6")])
+drops = Array[ExtResource("5_pccjk")]([SubResource("Resource_a2q8i"), SubResource("Resource_ykgt6"), SubResource("Resource_ux5qa"), SubResource("Resource_82cfe"), SubResource("Resource_gunhw"), SubResource("Resource_8gofh"), SubResource("Resource_h6wmr")])
 
 [node name="interface" parent="." unique_id=456038138 instance=ExtResource("13_n63tf")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1074903549]
 autoplay = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1812887092]
+environment = SubResource("Environment_b121j")
+camera_attributes = SubResource("CameraAttributesPractical_8c41q")

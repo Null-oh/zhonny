@@ -22,7 +22,7 @@ var bonus : bool = false
 var total : int = 0
 
 var eaten : int = 0
-var max_eaten : int = 10
+var max_eaten : int = 20
 
 var pockets = {}
 

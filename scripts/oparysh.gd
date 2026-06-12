@@ -19,14 +19,20 @@ var stop_distance: float = 1.0
 
 var start_position: Vector2
 
+var hatching : bool = false
+
+@onready var light = $light
+
 func _ready():
 	add_to_group("oparysh")
 	sprite.play("idle")
 	sprite.flip_v = false
+	light.energy = 0.0
 
 func hatch() -> String:
+	print("hatch started")
+	
 	total_drops = Global.drops
-	print("oparysh.hatch called")
 	
 	if Global.total > 500:
 		return "explode"
@@ -50,7 +56,46 @@ func hatch() -> String:
 	else:
 		return "but1"
 
+func play_hatch_animation():
+	hatching = true
+	print("play_hatch_animation called")
+	
+	if not sprite.sprite_frames.has_animation("hatch"):
+		print("ERROR: no 'hatch' animation found!")
+		light.energy = 1.0
+		return
+	
+	var camera = $Camera2D
+	var camera_tween = create_tween()
+	camera_tween.set_trans(Tween.TRANS_QUINT)
+	camera_tween.set_ease(Tween.EASE_IN_OUT)
+	
+	camera_tween.tween_property(camera, "zoom", Vector2(7.7, 7.7), 1.2)
+	
+	sprite.speed_scale = 1.0
+	sprite.flip_v = false
+	sprite.play("hatch")
+	
+	await sprite.animation_finished
+	sprite.pause() 
+	
+	camera_tween.tween_property(camera, "zoom", Vector2(7.9, 7.9), 0.5)
+	
+	light.visible = true
+
+	var tween = create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(light, "energy", 1.0, 0.5)
+	
+	await tween.finished
+
+
+
 func _process(delta):
+	if hatching:
+		return
+	
+	
 	speed = Global.speed
 	if is_moving: 
 		direction = global_position.direction_to(target_position)
@@ -74,7 +119,6 @@ func _process(delta):
 	else:
 		sprite.play("idle")
 		sprite.flip_v = false
-
 
 func _input(event):
 	if (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
