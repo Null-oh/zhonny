@@ -14,8 +14,7 @@ const E = 2
 const S = 4
 const W = 8
 
-var cell_walls = {Vector2i(0, -1): N, Vector2i(1, 0): E, 
-				  Vector2i(0, 1): S, Vector2i(-1, 0): W}
+var cell_walls = {Vector2i(0, -1): N, Vector2i(1, 0): E,  Vector2i(0, 1): S, Vector2i(-1, 0): W}
 
 @export var width : int = 23
 @export var height : int = 13

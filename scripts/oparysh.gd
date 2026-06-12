@@ -26,7 +26,7 @@ func _ready():
 
 func hatch() -> String:
 	total_drops = Global.drops
-	print(total_drops)
+	print("oparysh.hatch called")
 	
 	if Global.total > 500:
 		return "explode"

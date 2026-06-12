@@ -8,10 +8,13 @@ extends Node2D
 var timer : float = 3.0
 
 var shadow_tween : Tween
-var can_hit: bool = false
-var is_following: bool = false
+var can_hit : bool = false
+var is_following : bool = false
 
 var oparysh = null
+
+var active_tweens : Array[Tween] = []
+var is_paused : bool = false
 
 func _ready():
 	sprite.visible = false
@@ -29,8 +32,6 @@ func _ready():
 	area.body_entered.connect(_on_area_2d_body_entered)
 	
 	shadow_animation()
-	
-	
 
 func _process(_delta):
 	if is_following and oparysh and is_instance_valid(oparysh):
@@ -43,6 +44,7 @@ func shadow_animation():
 		shadow.modulate.a = 0.0
 		
 		shadow_tween = create_tween()
+		active_tweens.append(shadow_tween)
 		shadow_tween.set_parallel(true)
 		
 		shadow_tween.tween_property(shadow, "modulate:a", 0.8, timer)\
@@ -54,7 +56,7 @@ func shadow_animation():
 		
 		if oparysh.velocity.length() > 0:
 			var offset_direction = oparysh.direction
-			var target_position = oparysh.global_position + (offset_direction * 16)
+			var target_position = oparysh.global_position + (offset_direction * 21)
 			
 			var move_tween = create_tween()
 			move_tween.tween_property(shadow, "global_position", target_position, 0.1)\
@@ -69,8 +71,19 @@ func shadow_animation():
 
 
 func _on_playing_changed(new_value):
-	if !new_value and shadow_tween and shadow_tween.is_valid():
-		shadow_tween.kill()
+	#if !new_value and shadow_tween and shadow_tween.is_valid():
+		#shadow_tween.kill()
+	
+	if new_value:
+		is_paused = false
+		for tween in active_tweens:
+			if tween and tween.is_valid():
+				tween.play()
+	else:
+		is_paused = true
+		for tween in active_tweens:
+			if tween and tween.is_valid():
+				tween.pause()
 
 func drop(): 
 	is_following = false
@@ -79,6 +92,7 @@ func drop():
 	sprite.visible = true
 	
 	var bird_tween: Tween = create_tween()
+	active_tweens.append(bird_tween)
 	var fall_duration = 0.5
 	
 	bird_tween.tween_property(sprite, "position:y", 0, fall_duration)\
@@ -101,6 +115,7 @@ func drop():
 		area.visible = false
 	
 	bird_tween = create_tween()
+	active_tweens.append(bird_tween)
 	bird_tween.tween_property(sprite, "position:y", -200, fall_duration)\
 			  .set_trans(Tween.TRANS_QUAD)\
 			  .set_ease(Tween.EASE_OUT)
@@ -144,3 +159,9 @@ func _on_area_2d_body_entered(body):
 			print("oparysh")
 			Global.health = 0
 			can_hit = false
+
+func _exit_tree():
+	for tween in active_tweens:
+		if tween and tween.is_valid():
+			tween.kill()
+	active_tweens.clear()

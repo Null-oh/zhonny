@@ -11,30 +11,55 @@ extends CanvasLayer
 @onready var pause = $pause
 @onready var fail = $fail
 @onready var win = $win
+@onready var pocket = $pocket
+@onready var pocket_drops = $pocket/MarginContainer/VBoxContainer/pocket_drops
+
+@onready var pocket_button = $MarginContainer/VBoxContainer/pocket
 
 @onready var win_label = $win/MarginContainer/VBoxContainer/win_label
 @onready var win_texture = $win/MarginContainer/VBoxContainer/ColorRect/win_texture
 @onready var fail_label = $fail/MarginContainer/VBoxContainer/fail_label
 
-@onready var collection = $collection
-@onready var label1 = $collection/VBoxContainer/results/GridContainer/but1/but1label
-@onready var label2 = $collection/VBoxContainer/results/GridContainer/but2/but2label
-@onready var label3 = $collection/VBoxContainer/results/GridContainer/but3/but3label
-@onready var label4 = $collection/VBoxContainer/results/GridContainer/frog/froglabel
-@onready var label5 = $collection/VBoxContainer/results/GridContainer/beetle/beetlelabel
-@onready var label6 = $collection/VBoxContainer/results/GridContainer/hton/htonlabel
+#@onready var collection = $collection
+#@onready var label1 = $collection/VBoxContainer/results/GridContainer/but1/but1label
+#@onready var label2 = $collection/VBoxContainer/results/GridContainer/but2/but2label
+#@onready var label3 = $collection/VBoxContainer/results/GridContainer/but3/but3label
+#@onready var label4 = $collection/VBoxContainer/results/GridContainer/frog/froglabel
+#@onready var label5 = $collection/VBoxContainer/results/GridContainer/beetle/beetlelabel
+#@onready var label6 = $collection/VBoxContainer/results/GridContainer/hton/htonlabel
+#
+#@onready var texture1 = $collection/VBoxContainer/results/GridContainer/but1/ColorRect/but1texture
+#@onready var texture2 = $collection/VBoxContainer/results/GridContainer/but2/ColorRect/but2texture
+#@onready var texture3 = $collection/VBoxContainer/results/GridContainer/but3/ColorRect/but3texture
+#@onready var texture4 = $collection/VBoxContainer/results/GridContainer/frog/ColorRect/frogtexture
+#@onready var texture5 = $collection/VBoxContainer/results/GridContainer/beetle/ColorRect/beetletexture
+#@onready var texture6 = $collection/VBoxContainer/results/GridContainer/hton/ColorRect/htontexture
 
-@onready var texture1 = $collection/VBoxContainer/results/GridContainer/but1/ColorRect/but1texture
-@onready var texture2 = $collection/VBoxContainer/results/GridContainer/but2/ColorRect/but2texture
-@onready var texture3 = $collection/VBoxContainer/results/GridContainer/but3/ColorRect/but3texture
-@onready var texture4 = $collection/VBoxContainer/results/GridContainer/frog/ColorRect/frogtexture
-@onready var texture5 = $collection/VBoxContainer/results/GridContainer/beetle/ColorRect/beetletexture
-@onready var texture6 = $collection/VBoxContainer/results/GridContainer/hton/ColorRect/htontexture
+@onready var collection = $collection2
+@onready var label1 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but1/but1label
+@onready var label2 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but2/but2label
+@onready var label3 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but3/but3label
+@onready var label4 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/frog/froglabel
+@onready var label5 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/beetle/beetlelabel
+@onready var label6 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/hton/htonlabel
 
+@onready var texture1 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but1/ColorRect/but1texture
+@onready var texture2 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but2/ColorRect/but2texture
+@onready var texture3 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but3/ColorRect/but3texture
+@onready var texture4 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/frog/ColorRect/frogtexture
+@onready var texture5 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/beetle/ColorRect/beetletexture
+@onready var texture6 = $collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/hton/ColorRect/htontexture
+
+@onready var pocketbut1 = $collection2/pocketbut1
+@onready var pocketbut2 = $collection2/pocketbut2
+@onready var pocketbut3 = $collection2/pocketbut3
+@onready var pocketfrog = $collection2/pocketfrog
+@onready var pocketbeetle = $collection2/pocketbeetle
+@onready var pockethton = $collection2/pockethton
 
 @onready var drop_container = $MarginContainer/VBoxContainer/drops
 const ITEM_DISPLAY_TIME = 5.0
-const ITEM_FADE_TIME = 3.0
+const ITEM_FADE_TIME = 5.0
 
 
 var time : float
@@ -42,7 +67,11 @@ var time : float
 var bonus_tween: Tween = null
 var bonus_active : bool = false
 
+var active_tweens : Array[Tween] = []
+var is_paused : bool = false
+
 func _ready():
+	pocket_button.add_to_group("ui")
 	info.text = ""
 	
 	bonus.visible = false
@@ -50,10 +79,9 @@ func _ready():
 	bonus.value = 100
 	
 	timer.min_value = 0
-	timer.max_value = Global.max_time
-	timer.value = Global.max_time
+	timer.max_value = Global.max_eaten
+	timer.value = 0
 	
-	Global.time = Global.max_time
 	Global.speed = 40
 	Global.playing = true
 	
@@ -61,6 +89,10 @@ func _ready():
 	fail.visible = false
 	win.visible = false
 	collection.visible = false
+	pocket.visible = false
+	
+	for child in pocket_drops.get_children():
+		child.queue_free()
 	
 	label1.text = "???"
 	label2.text = "???"
@@ -76,7 +108,7 @@ func _ready():
 	setup_texture(texture5)
 	setup_texture(texture6)
 	
-	setup_win_texture()
+	#setup_win_texture()
 	
 	texture1.texture = preload("res://img/some_texture.png")
 	texture2.texture = preload("res://img/some_texture.png")
@@ -85,24 +117,40 @@ func _ready():
 	texture5.texture = preload("res://img/some_texture.png")
 	texture6.texture = preload("res://img/some_texture.png")
 	
+	pocketbut1.visible = false
+	pocketbut2.visible = false
+	pocketbut3.visible = false
+	pocketfrog.visible = false
+	pocketbeetle.visible = false
+	pockethton.visible = false
+	
+	load_pockets()
+	
 	win_texture.visible = false
+	
+	Global.connect("playing_changed", Callable(self, "_on_playing_changed"))
 
 func _process(delta):
 	if !Global.playing: return
 	
-	if Global.time > 0:
-		Global.time -= delta
+	#if Global.time > 0:
+		#Global.time -= delta
+	
+	timer.value = Global.eaten
 		
 	if Global.bonus:
 		get_bonus()
 	
-	if Global.time <= 0 and Global.playing:
+	#if Global.time <= 0 and Global.playing:
+		#won()
+	
+	if timer.value == Global.max_eaten and Global.playing:
 		won()
 	
 	if Global.health <= 0:
 		failed()
 	
-	write()
+	#write()
 
 func write():
 	timer.value = max(0, Global.time)
@@ -130,6 +178,7 @@ func get_bonus():
 		bonus.value = 100
 		
 		bonus_tween = create_tween()
+		active_tweens.append(bonus_tween)
 		bonus_tween.tween_property(bonus, "value", 0, 5.0)
 		bonus_tween.finished.connect(_on_bonus_finished)
 		
@@ -140,6 +189,7 @@ func get_bonus():
 		bonus.value = 100
 		
 		bonus_tween = create_tween()
+		active_tweens.append(bonus_tween)
 		bonus_tween.tween_property(bonus, "value", 0, 5.0)
 		bonus_tween.finished.connect(_on_bonus_finished)
 		
@@ -168,40 +218,44 @@ func won():
 	Global.playing = false
 	if oparysh and oparysh.has_method("hatch"):
 		result = oparysh.hatch()
+		print("hatch result: ", result)
 	
 	match result:
 		"but1":
 			win_label.text = "ВЫ СТАЛИ\nМАЛЕНЬКОЙ БАБЧКОЙ!"
 			win_texture.texture = preload("res://img/but1.png")
+			Global.add_pocket("but1")
 		"but2": 
 			win_label.text = "ВЫ СТАЛИ\nБОЛЬШОЙ БАБЧКОЙ!"
 			win_texture.texture = preload("res://img/but2.png")
+			Global.add_pocket("but2")
 		"but3": 
 			win_label.text = "ВЫ СТАЛИ\nПАФОСНОЙ БАБЧКОЙ!"
 			win_texture.texture = preload("res://img/but3.png")
+			Global.add_pocket("but3")
 		"beetle": 
 			win_label.text = "ВЫ СТАЛИ\nМАЙСКИМ ЖУЧОМ!"
 			win_texture.texture = preload("res://img/beetle.png")
+			Global.add_pocket("beetle")
 		"frog":
 			win_label.text = "ВЫ СТАЛИ\nЛЕГУЧКОЙ!"
 			win_texture.texture = preload("res://img/frog.png")
+			Global.add_pocket("frog")
 		"hton": 
 			win_label.text = "ВЫ СТАЛИ\nХТОНИЧЕСКИМ НЕФОРОМ!"
 			win_texture.texture = preload("res://img/hton.png")
+			Global.add_pocket("hton")
 		"explode": 
 			win_label.text = "ВЫ ОБОЖРАЛИСЬ\nИ ЛОПНУЛИ..."
 			win_texture.visible = false
 		"starve":
-			win_label.text = "В СЛЕДУЮЩИЙ РАЗ\nКУШАЙТЕ БОЛЬШЕ..."
+			win_label.text = "В СЛЕДУЮЩИЙ РАЗ\nКУШАЙТЕ ПОЛЕЗНОЕ..."
 			win_texture.visible = false
 	
-	if win_texture.visible and win_texture.texture:
-		await get_tree().process_frame
-		win_texture.size = win_texture.get_parent().size
-		
-	
 	Global.add_result(result)
+	print("Global.results: ", Global.results)
 	update_collection()
+	load_pockets()
 	win.visible = true
 
 func setup_texture(texture_rect: TextureRect):
@@ -225,7 +279,7 @@ func setup_texture(texture_rect: TextureRect):
 
 func setup_win_texture():
 	win_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	win_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED  # Изменено с COVERED на CENTERED
+	win_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	win_texture.size_flags_horizontal = Control.SIZE_EXPAND
 	win_texture.size_flags_vertical = Control.SIZE_EXPAND
 	
@@ -302,6 +356,72 @@ func update_collection():
 		label6.text = "???"
 		texture6.texture = preload("res://img/some_texture.png")
 
+func load_pockets():
+	var but1pocket = pocketbut1.find_child("pocket_drops", true, false)
+	var but2pocket = pocketbut2.find_child("pocket_drops", true, false)
+	var but3pocket = pocketbut3.find_child("pocket_drops", true, false)
+	var frogpocket = pocketfrog.find_child("pocket_drops", true, false)
+	var beetlepocket = pocketbeetle.find_child("pocket_drops", true, false)
+	var htonpocket = pockethton.find_child("pocket_drops", true, false)
+	
+	if !but1pocket:
+		print("no but1pocket")
+		return
+	
+	for child in but1pocket.get_children():
+		child.queue_free()
+	for child in but2pocket.get_children():
+		child.queue_free()
+	for child in but3pocket.get_children():
+		child.queue_free()
+	for child in frogpocket.get_children():
+		child.queue_free()
+	for child in beetlepocket.get_children():
+		child.queue_free()
+	for child in htonpocket.get_children():
+		child.queue_free()
+	
+	if Global.pockets.has("but1"):
+		for item in Global.pockets["but1"]:
+			for i in range(item["count"]):
+				but1pocket.add_child(get_drop_texture(item["name"]))
+	if Global.pockets.has("but2"):
+		for item in Global.pockets["but2"]:
+			for i in range(item["count"]):
+				but2pocket.add_child(get_drop_texture(item["name"]))
+	if Global.pockets.has("but3"):
+		for item in Global.pockets["but3"]:
+			for i in range(item["count"]):
+				but3pocket.add_child(get_drop_texture(item["name"]))
+	if Global.pockets.has("frog"):
+		for item in Global.pockets["frog"]:
+			for i in range(item["count"]):
+				frogpocket.add_child(get_drop_texture(item["name"]))
+	if Global.pockets.has("beetle"):
+		for item in Global.pockets["beetle"]:
+			for i in range(item["count"]):
+				beetlepocket.add_child(get_drop_texture(item["name"]))
+	if Global.pockets.has("hton"):
+		for item in Global.pockets["hton"]:
+			for i in range(item["count"]):
+				htonpocket.add_child(get_drop_texture(item["name"]))
+
+func get_drop_texture(drop_name: String) -> TextureRect:
+	var item_texture = TextureRect.new()
+	var texture = load_item_texture(drop_name)
+	
+	if texture:
+		item_texture.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		item_texture.texture = texture
+	
+	item_texture.custom_minimum_size = Vector2(50, 50)
+	item_texture.size = Vector2(50, 50)
+	
+	item_texture.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	item_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	
+	return item_texture
+
 func add_item(drop_name: String):
 	var item_texture = TextureRect.new()
 	var texture = load_item_texture(drop_name)
@@ -319,7 +439,12 @@ func add_item(drop_name: String):
 	drop_container.add_child(item_texture)
 	drop_container.move_child(item_texture, 0)
 	
+	var pocket_drop_texture = item_texture.duplicate()
+	pocket_drops.add_child(pocket_drop_texture)
+	
 	animate_item_removal(item_texture)
+	
+	Global.eaten += 1
 
 func load_item_texture(drop_name: String) -> Texture2D:
 	match drop_name:
@@ -345,12 +470,25 @@ func animate_item_removal(item_texture: TextureRect):
 	tween.tween_property(item_texture, "modulate", Color(1, 1, 1, 0), ITEM_FADE_TIME)
 	tween.tween_callback(item_texture.queue_free)
 
+func _on_playing_changed(new_value):
+	if new_value:
+		is_paused = false
+		for tween in active_tweens:
+			if tween and tween.is_valid():
+				tween.play()
+	else:
+		is_paused = true
+		for tween in active_tweens:
+			if tween and tween.is_valid():
+				tween.pause()
+
 func _on_pause_pressed():
 	Global.playing = false
 	pause.visible = true
 
 func _on_continue_pressed():
 	pause.visible = false
+	pocket.visible = false
 	Global.playing = true
 
 func _on_collection_pressed():
@@ -367,7 +505,49 @@ func _on_reset_pressed():
 	Global.playing = false
 	Global.reset_results()
 	update_collection()
+	load_pockets()
 
 func _on_back_pressed():
 	collection.visible = false
+	pocket.visible = false
 	Global.playing = false
+
+func _on_pocket_pressed():
+	if pocket.visible:
+		pocket.visible = false
+		Global.playing = true
+	else:
+		pocket.visible = true
+		Global.playing = false
+
+func _on_b_1_pocket_pressed():
+	pocketbut1.visible = true
+
+func _on_b_2_pocket_pressed():
+	pocketbut2.visible = true
+
+func _on_b_3_pocket_pressed():
+	pocketbut3.visible = true
+
+func _on_frogpocket_pressed():
+	pocketfrog.visible = true
+
+func _on_beetlepocket_pressed():
+	pocketbeetle.visible = true
+
+func _on_htonpocket_pressed():
+	pockethton.visible = true
+
+func _on_close_pocket_pressed():
+	pocketbut1.visible = false
+	pocketbut2.visible = false
+	pocketbut3.visible = false
+	pocketfrog.visible = false
+	pocketbeetle.visible = false
+	pockethton.visible = false
+
+func _exit_tree():
+	for tween in active_tweens:
+		if tween and tween.is_valid():
+			tween.kill()
+	active_tweens.clear()

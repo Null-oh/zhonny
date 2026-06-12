@@ -22,3 +22,6 @@ format = 2
 layer_0/tile_data = PackedInt32Array(2, 1, 0, 1, 1, 0, 0, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0)
 
 [node name="menus" parent="." unique_id=184873437 instance=ExtResource("2_pa3yd")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1542552780]
+autoplay = true

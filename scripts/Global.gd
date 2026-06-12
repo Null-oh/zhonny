@@ -21,6 +21,11 @@ var bonus : bool = false
 
 var total : int = 0
 
+var eaten : int = 0
+var max_eaten : int = 10
+
+var pockets = {}
+
 var drops = []
 var results = []
 
@@ -31,12 +36,16 @@ func reset():
 	time = max_time
 	bonus = false
 	drops = []
+	eaten = 0
+
 
 func reset_results():
 	results = []
+	pockets = {}
+
 
 func add_drop(item_name: String):
-	print("Added to Global: ", item_name)
+	print("Added to Global.drops: ", item_name)
 	for drop in drops:
 		if drop["name"] == item_name:
 			drop["count"] += 1
@@ -50,9 +59,17 @@ func count_drops(item_name: String) -> int:
 	return 0
 
 func add_result(result_name: String):
-	print("Added result: ", result_name)
+	print("Added to Global.results: ", result_name)
 	if result_name not in results:
 		results.append(result_name)
+
+func add_pocket(result: String):
+	pockets[result] = drops
+	
+	print("Added to Global.pockets: ")
+	print("Result: ", result)
+	print("Pocket: ", pockets[result])
+	
 
 func get_map_center() -> Vector2 :
 	var x = map_width * tile_size * 0.5

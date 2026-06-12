@@ -6,48 +6,24 @@
 [ext_resource type="PackedScene" uid="uid://bu16vdwyjpme" path="res://assets/spawner.tscn" id="4_v4nd4"]
 [ext_resource type="Resource" uid="uid://dl7q3mexng170" path="res://drops/leaf.tres" id="5_myo3r"]
 [ext_resource type="Script" uid="uid://d061ep0kq34n" path="res://drops/drop_slot.gd" id="5_pccjk"]
-[ext_resource type="Resource" uid="uid://dl1j2nkuhav4q" path="res://drops/stick.tres" id="7_7qurs"]
-[ext_resource type="Resource" uid="uid://cvfpjw0deslum" path="res://drops/flower.tres" id="8_jd3cl"]
-[ext_resource type="Resource" uid="uid://c58ob2e2fiioi" path="res://drops/berry.tres" id="9_08fy2"]
 [ext_resource type="Resource" uid="uid://cic2ryidd25op" path="res://drops/mushroom.tres" id="10_5xatw"]
 [ext_resource type="Resource" uid="uid://ben24dpli5evj" path="res://drops/acorn.tres" id="11_weudl"]
-[ext_resource type="Resource" uid="uid://gmmmp3o32cm5" path="res://drops/raf.tres" id="12_q83g0"]
 [ext_resource type="PackedScene" uid="uid://ccmk8700wohmm" path="res://assets/interface.tscn" id="13_n63tf"]
 
 [sub_resource type="Resource" id="Resource_a2q8i"]
 script = ExtResource("5_pccjk")
 drop = ExtResource("5_myo3r")
-quantity = 20
-
-[sub_resource type="Resource" id="Resource_hfk6m"]
-script = ExtResource("5_pccjk")
-drop = ExtResource("7_7qurs")
-quantity = 20
-
-[sub_resource type="Resource" id="Resource_vqpdq"]
-script = ExtResource("5_pccjk")
-drop = ExtResource("8_jd3cl")
-quantity = 10
-
-[sub_resource type="Resource" id="Resource_rk22o"]
-script = ExtResource("5_pccjk")
-drop = ExtResource("9_08fy2")
-quantity = 10
+quantity = 50
 
 [sub_resource type="Resource" id="Resource_p573x"]
 script = ExtResource("5_pccjk")
 drop = ExtResource("10_5xatw")
-quantity = 10
+quantity = 50
 
 [sub_resource type="Resource" id="Resource_ykgt6"]
 script = ExtResource("5_pccjk")
 drop = ExtResource("11_weudl")
-quantity = 10
-
-[sub_resource type="Resource" id="Resource_qeaqr"]
-script = ExtResource("5_pccjk")
-drop = ExtResource("12_q83g0")
-quantity = 10
+quantity = 50
 
 [node name="level" type="Node2D" unique_id=426426017]
 script = ExtResource("1_vylwx")
@@ -60,6 +36,9 @@ script = ExtResource("1_vylwx")
 zoom = Vector2(7, 7)
 
 [node name="spawner" parent="." unique_id=1826277945 instance=ExtResource("4_v4nd4")]
-drops = Array[ExtResource("5_pccjk")]([SubResource("Resource_a2q8i"), SubResource("Resource_hfk6m"), SubResource("Resource_vqpdq"), SubResource("Resource_rk22o"), SubResource("Resource_p573x"), SubResource("Resource_ykgt6"), SubResource("Resource_qeaqr")])
+drops = Array[ExtResource("5_pccjk")]([SubResource("Resource_a2q8i"), SubResource("Resource_p573x"), SubResource("Resource_ykgt6")])
 
 [node name="interface" parent="." unique_id=456038138 instance=ExtResource("13_n63tf")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1074903549]
+autoplay = true

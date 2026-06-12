@@ -4,27 +4,37 @@
 [ext_resource type="FontFile" uid="uid://b1g365wn3n5ll" path="res://assets/kom-post.ttf" id="3_qsspc"]
 [ext_resource type="Texture2D" uid="uid://snmqcx1deh4p" path="res://img/template.png" id="4_ne1gv"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_680uh"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.776471, 0.305882, 0.121569, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rbuin"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(128, 64, 64, 64)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rfpj"]
-bg_color = Color(0.776471, 0.305882, 0.121569, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rh8x8"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 0, 64, 64)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cim4"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.239216, 0.270588, 0.694118, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i0fg6"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(128, 128, 64, 64)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo8nv"]
-bg_color = Color(0.239216, 0.270588, 0.694118, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2m0io"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 128, 64, 64)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52ixo"]
 texture = ExtResource("4_ne1gv")
@@ -35,6 +45,22 @@ texture_margin_bottom = 12.0
 region_rect = Rect2(64, 0, 64, 64)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y4nly"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(128, 0, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_efymi"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 0, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wh1f"]
 texture = ExtResource("4_ne1gv")
 texture_margin_left = 12.0
 texture_margin_top = 12.0
@@ -186,6 +212,65 @@ texture_margin_right = 12.0
 texture_margin_bottom = 12.0
 region_rect = Rect2(64, 64, 64, 64)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4bih"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 0, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80dw7"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(128, 0, 64, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sk8i1"]
+bg_color = Color(0.56078434, 0.7490196, 0.43137255, 0.3529412)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6b07c"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bdj2w"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5jjog"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ugshm"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lr05"]
+texture = ExtResource("4_ne1gv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 64, 64, 64)
+
 [node name="interface" type="CanvasLayer" unique_id=1279431283]
 script = ExtResource("1_3bmk6")
 
@@ -227,8 +312,8 @@ theme_override_constants/separation = 10
 [node name="timer" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=83103912]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_680uh")
-theme_override_styles/fill = SubResource("StyleBoxFlat_4rfpj")
+theme_override_styles/background = SubResource("StyleBoxTexture_rbuin")
+theme_override_styles/fill = SubResource("StyleBoxTexture_rh8x8")
 show_percentage = false
 
 [node name="bonus" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1100180355]
@@ -236,8 +321,8 @@ custom_minimum_size = Vector2(500, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/background = SubResource("StyleBoxFlat_5cim4")
-theme_override_styles/fill = SubResource("StyleBoxFlat_wo8nv")
+theme_override_styles/background = SubResource("StyleBoxTexture_i0fg6")
+theme_override_styles/fill = SubResource("StyleBoxTexture_2m0io")
 show_percentage = false
 
 [node name="pause" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1347229039 groups=["ui"]]
@@ -246,7 +331,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
-theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_hover_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
 theme_override_fonts/font = ExtResource("3_qsspc")
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxTexture_52ixo")
@@ -261,7 +347,22 @@ size_flags_horizontal = 8
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
+[node name="pocket" type="Button" parent="MarginContainer/VBoxContainer" unique_id=804116811 groups=["ui"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_hover_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_efymi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3wh1f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3wh1f")
+text = " ↑ "
+
 [node name="pause" type="NinePatchRect" parent="." unique_id=1248204558 groups=["ui"]]
+visible = false
 custom_minimum_size = Vector2(300, 400)
 anchors_preset = 8
 anchor_left = 0.5
@@ -495,7 +596,7 @@ custom_minimum_size = Vector2(140, 45)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.372549, 0.262745, 0.207843, 1)
 theme_override_fonts/font = ExtResource("3_qsspc")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 32
 text = " :) "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -509,17 +610,12 @@ color = Color(1, 1, 1, 0)
 [node name="win_texture" type="TextureRect" parent="win/MarginContainer/VBoxContainer/ColorRect" unique_id=625150446]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -155.0
-offset_top = -85.0
-offset_right = 155.0
-offset_bottom = 85.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch_mode = 5
 
 [node name="restart" type="Button" parent="win/MarginContainer/VBoxContainer" unique_id=1182118083]
 texture_filter = 1
@@ -569,7 +665,71 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_wc5vg")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jrr5l")
 text = " ВЫЙТИ "
 
+[node name="pocket" type="NinePatchRect" parent="." unique_id=1911982477 groups=["ui"]]
+visible = false
+custom_minimum_size = Vector2(400, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(64, 0, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="pocket" unique_id=1033601396]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 102
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 102
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pocket/MarginContainer" unique_id=2046316261]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="pocket_drops" type="GridContainer" parent="pocket/MarginContainer/VBoxContainer" unique_id=784414642]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 4
+
+[node name="continue" type="Button" parent="pocket/MarginContainer/VBoxContainer" unique_id=1977548721]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_loy0k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wc5vg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jrr5l")
+text = " назад "
+
 [node name="collection" type="NinePatchRect" parent="." unique_id=1120614769]
+visible = false
 custom_minimum_size = Vector2(600, 550)
 anchors_preset = 8
 anchor_left = 0.5
@@ -624,9 +784,18 @@ color = Color(0.92549, 0.792157, 0.611765, 1)
 [node name="but1texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but1/ColorRect" unique_id=627336966]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="but1label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but1" unique_id=1179210843]
 layout_mode = 2
@@ -648,9 +817,18 @@ color = Color(0.92549, 0.792157, 0.611765, 1)
 [node name="but2texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but2/ColorRect" unique_id=1963557541]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="but2label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but2" unique_id=1755816726]
 layout_mode = 2
@@ -672,9 +850,18 @@ color = Color(0.92549, 0.792157, 0.611765, 1)
 [node name="but3texture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/but3/ColorRect" unique_id=1130731484]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="but3label" type="Label" parent="collection/VBoxContainer/results/GridContainer/but3" unique_id=857933322]
 layout_mode = 2
@@ -696,9 +883,18 @@ color = Color(0.92549, 0.792157, 0.611765, 1)
 [node name="frogtexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/frog/ColorRect" unique_id=1576682809]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="froglabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/frog" unique_id=1464183083]
 layout_mode = 2
@@ -720,9 +916,18 @@ color = Color(0.92549, 0.792157, 0.611765, 1)
 [node name="beetletexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/beetle/ColorRect" unique_id=66337137]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="beetlelabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/beetle" unique_id=1972881044]
 layout_mode = 2
@@ -744,9 +949,18 @@ color = Color(0.92549, 0.792157, 0.611765, 1)
 [node name="htontexture" type="TextureRect" parent="collection/VBoxContainer/results/GridContainer/hton/ColorRect" unique_id=820383590]
 texture_filter = 1
 custom_minimum_size = Vector2(130, 130)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="htonlabel" type="Label" parent="collection/VBoxContainer/results/GridContainer/hton" unique_id=509779458]
 layout_mode = 2
@@ -800,7 +1014,669 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_8c62r")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vmq2t")
 text = " сброс "
 
+[node name="collection2" type="MarginContainer" parent="." unique_id=2080832523]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="collection2" unique_id=6498139]
+texture_filter = 1
+custom_minimum_size = Vector2(650, 600)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(0, 128, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="collection2/NinePatchRect" unique_id=21769649]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="collection2/NinePatchRect/MarginContainer" unique_id=1109923614]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="results" type="MarginContainer" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer" unique_id=927058182]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="GridContainer" type="GridContainer" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results" unique_id=1845679406]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 35
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="but1" type="VBoxContainer" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer" unique_id=827753851]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but1" unique_id=2109702243]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="but1texture" type="TextureRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but1/ColorRect" unique_id=816476087]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="but1label" type="Label" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but1" unique_id=100321057]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_shadow_color = Color(0.6745098, 0.4745098, 0.23529412, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "butterfly 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="b1pocket" type="Button" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but1" unique_id=418296648]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_u4bih")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80dw7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sk8i1")
+text = "?"
+
+[node name="but2" type="VBoxContainer" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer" unique_id=1269834082]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but2" unique_id=62083246]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="but2texture" type="TextureRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but2/ColorRect" unique_id=174830897]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="but2label" type="Label" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but2" unique_id=1884549913]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_shadow_color = Color(0.6745098, 0.4745098, 0.23529412, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "butterfly 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="b2pocket" type="Button" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but2" unique_id=1461295472]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_u4bih")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80dw7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sk8i1")
+text = "?"
+
+[node name="but3" type="VBoxContainer" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer" unique_id=817721667]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but3" unique_id=610588354]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="but3texture" type="TextureRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but3/ColorRect" unique_id=308461252]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="but3label" type="Label" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but3" unique_id=1384939786]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_shadow_color = Color(0.6745098, 0.4745098, 0.23529412, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "butterfly 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="b3pocket" type="Button" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but3" unique_id=1905713292]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_u4bih")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80dw7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sk8i1")
+text = "?"
+
+[node name="frog" type="VBoxContainer" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer" unique_id=996545650]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/frog" unique_id=96810790]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="frogtexture" type="TextureRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/frog/ColorRect" unique_id=552541445]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="froglabel" type="Label" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/frog" unique_id=1386391213]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_shadow_color = Color(0.6745098, 0.4745098, 0.23529412, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "frog"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="frogpocket" type="Button" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/frog" unique_id=531236856]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_u4bih")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80dw7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sk8i1")
+text = "?"
+
+[node name="beetle" type="VBoxContainer" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer" unique_id=182581232]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/beetle" unique_id=337536812]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="beetletexture" type="TextureRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/beetle/ColorRect" unique_id=938340870]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="beetlelabel" type="Label" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/beetle" unique_id=283167099]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_shadow_color = Color(0.6745098, 0.4745098, 0.23529412, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "beetle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="beetlepocket" type="Button" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/beetle" unique_id=1595171454]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_u4bih")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80dw7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sk8i1")
+text = "?"
+
+[node name="hton" type="VBoxContainer" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer" unique_id=1520020974]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/hton" unique_id=2130169841]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+color = Color(0.92549, 0.792157, 0.611765, 1)
+
+[node name="htontexture" type="TextureRect" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/hton/ColorRect" unique_id=1173954859]
+texture_filter = 1
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="htonlabel" type="Label" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/hton" unique_id=1311270440]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84313726, 0.70980394, 0.54901963, 1)
+theme_override_colors/font_shadow_color = Color(0.6745098, 0.4745098, 0.23529412, 1)
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+text = "hton"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="htonpocket" type="Button" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/hton" unique_id=630292076]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_u4bih")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80dw7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sk8i1")
+text = "?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer" unique_id=1207502588]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+
+[node name="back" type="Button" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1081344560]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_6b07c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bdj2w")
+text = " НАЗАД "
+
+[node name="reset" type="Button" parent="collection2/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=797718283]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_6b07c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bdj2w")
+text = " СБРОС "
+
+[node name="pocketbut1" type="NinePatchRect" parent="collection2" unique_id=1593941918 groups=["ui"]]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(64, 0, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="collection2/pocketbut1" unique_id=649017764]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 102
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 102
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="collection2/pocketbut1/MarginContainer" unique_id=1439725039]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="pocket_drops" type="GridContainer" parent="collection2/pocketbut1/MarginContainer/VBoxContainer" unique_id=5039364]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 4
+
+[node name="close_pocket" type="Button" parent="collection2/pocketbut1/MarginContainer/VBoxContainer" unique_id=410452262]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_5jjog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ugshm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2lr05")
+text = " назад "
+
+[node name="pocketbut2" type="NinePatchRect" parent="collection2" unique_id=522118337 groups=["ui"]]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(64, 0, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="collection2/pocketbut2" unique_id=1367441348]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 102
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 102
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="collection2/pocketbut2/MarginContainer" unique_id=1374526872]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="pocket_drops" type="GridContainer" parent="collection2/pocketbut2/MarginContainer/VBoxContainer" unique_id=844407695]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 4
+
+[node name="close_pocket" type="Button" parent="collection2/pocketbut2/MarginContainer/VBoxContainer" unique_id=903522827]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_5jjog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ugshm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2lr05")
+text = " назад "
+
+[node name="pocketbut3" type="NinePatchRect" parent="collection2" unique_id=614519326 groups=["ui"]]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(64, 0, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="collection2/pocketbut3" unique_id=203866419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 102
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 102
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="collection2/pocketbut3/MarginContainer" unique_id=419330698]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="pocket_drops" type="GridContainer" parent="collection2/pocketbut3/MarginContainer/VBoxContainer" unique_id=762220345]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 4
+
+[node name="close_pocket" type="Button" parent="collection2/pocketbut3/MarginContainer/VBoxContainer" unique_id=1584182783]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_5jjog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ugshm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2lr05")
+text = " назад "
+
+[node name="pocketfrog" type="NinePatchRect" parent="collection2" unique_id=384270473 groups=["ui"]]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(64, 0, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="collection2/pocketfrog" unique_id=233860126]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 102
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 102
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="collection2/pocketfrog/MarginContainer" unique_id=786901499]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="pocket_drops" type="GridContainer" parent="collection2/pocketfrog/MarginContainer/VBoxContainer" unique_id=1723724886]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 4
+
+[node name="close_pocket" type="Button" parent="collection2/pocketfrog/MarginContainer/VBoxContainer" unique_id=949748712]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_5jjog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ugshm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2lr05")
+text = " назад "
+
+[node name="pocketbeetle" type="NinePatchRect" parent="collection2" unique_id=1470394552 groups=["ui"]]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(64, 0, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="collection2/pocketbeetle" unique_id=1530931399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 102
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 102
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="collection2/pocketbeetle/MarginContainer" unique_id=1247095061]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="pocket_drops" type="GridContainer" parent="collection2/pocketbeetle/MarginContainer/VBoxContainer" unique_id=152379260]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 4
+
+[node name="close_pocket" type="Button" parent="collection2/pocketbeetle/MarginContainer/VBoxContainer" unique_id=1324693519]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_5jjog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ugshm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2lr05")
+text = " назад "
+
+[node name="pockethton" type="NinePatchRect" parent="collection2" unique_id=1277393196 groups=["ui"]]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_ne1gv")
+region_rect = Rect2(64, 0, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="collection2/pockethton" unique_id=1645216431]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 102
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 102
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="collection2/pockethton/MarginContainer" unique_id=299993252]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="pocket_drops" type="GridContainer" parent="collection2/pockethton/MarginContainer/VBoxContainer" unique_id=584807789]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 4
+
+[node name="close_pocket" type="Button" parent="collection2/pockethton/MarginContainer/VBoxContainer" unique_id=227270478]
+texture_filter = 1
+custom_minimum_size = Vector2(140, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qsspc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_5jjog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ugshm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2lr05")
+text = " назад "
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/pocket" to="." method="_on_pocket_pressed"]
 [connection signal="pressed" from="pause/MarginContainer/VBoxContainer/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="pause/MarginContainer/VBoxContainer/collection" to="." method="_on_collection_pressed"]
 [connection signal="pressed" from="pause/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
@@ -810,5 +1686,20 @@ text = " сброс "
 [connection signal="pressed" from="win/MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="win/MarginContainer/VBoxContainer/collection" to="." method="_on_collection_pressed"]
 [connection signal="pressed" from="win/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="pocket/MarginContainer/VBoxContainer/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="collection/VBoxContainer/buttons/vbox/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="collection/VBoxContainer/buttons/vbox/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but1/b1pocket" to="." method="_on_b_1_pocket_pressed"]
+[connection signal="pressed" from="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but2/b2pocket" to="." method="_on_b_2_pocket_pressed"]
+[connection signal="pressed" from="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/but3/b3pocket" to="." method="_on_b_3_pocket_pressed"]
+[connection signal="pressed" from="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/frog/frogpocket" to="." method="_on_frogpocket_pressed"]
+[connection signal="pressed" from="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/beetle/beetlepocket" to="." method="_on_beetlepocket_pressed"]
+[connection signal="pressed" from="collection2/NinePatchRect/MarginContainer/VBoxContainer/results/GridContainer/hton/htonpocket" to="." method="_on_htonpocket_pressed"]
+[connection signal="pressed" from="collection2/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="collection2/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="collection2/pocketbut1/MarginContainer/VBoxContainer/close_pocket" to="." method="_on_close_pocket_pressed"]
+[connection signal="pressed" from="collection2/pocketbut2/MarginContainer/VBoxContainer/close_pocket" to="." method="_on_close_pocket_pressed"]
+[connection signal="pressed" from="collection2/pocketbut3/MarginContainer/VBoxContainer/close_pocket" to="." method="_on_close_pocket_pressed"]
+[connection signal="pressed" from="collection2/pocketfrog/MarginContainer/VBoxContainer/close_pocket" to="." method="_on_close_pocket_pressed"]
+[connection signal="pressed" from="collection2/pocketbeetle/MarginContainer/VBoxContainer/close_pocket" to="." method="_on_close_pocket_pressed"]
+[connection signal="pressed" from="collection2/pockethton/MarginContainer/VBoxContainer/close_pocket" to="." method="_on_close_pocket_pressed"]

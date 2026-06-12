@@ -187,7 +187,6 @@ sprite_frames = SubResource("SpriteFrames_ry5j8")
 frame_progress = 0.0332821
 
 [node name="collection" type="ColorRect" parent="CanvasLayer" unique_id=1506767822]
-visible = false
 custom_minimum_size = Vector2(600, 550)
 anchors_preset = 8
 anchor_left = 0.5
@@ -575,6 +574,7 @@ text = "(P.S. Если увидите косяки по части график�
 vertical_alignment = 1
 
 [node name="menu" type="Control" parent="CanvasLayer" unique_id=1550867066]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

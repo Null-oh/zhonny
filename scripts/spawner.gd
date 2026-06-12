@@ -7,7 +7,7 @@ extends Node2D
 
 @export var drops : Array[DropSlot] = []
 @onready var bird = preload("res://assets/bird.tscn")
-@export var bird_timer: float = 5.0
+@export var bird_timer: float = 10.0
 var t : float = 0.0
 
 @onready var oparysh = get_tree().get_root().get_node("level/oparysh")
@@ -29,7 +29,8 @@ func _process(delta):
 			t+= delta
 		else:
 			t = 0
-			spawn_bird()
+			#spawn_bird()
+#			отладка
 
 func _on_map_ready():
 	spawn_drops()
@@ -86,28 +87,7 @@ func spawn_bird():
 		print("oparysh gde")
 		return
 	
-	#var oparysh_tile_x = floor(oparysh.position.x / tile_size)
-	#var oparysh_tile_y = floor(oparysh.position.y / tile_size)
-	#
-	#var possible_positions = []
-	#
-	#for x in range(oparysh_tile_x - 1, oparysh_tile_x + 2):
-		#for y in range(oparysh_tile_y - 1, oparysh_tile_y + 2):
-			#if x >= 0 and x < map_width and y >= 0 and y < map_height:
-				#possible_positions.append(Vector2(x, y))
-	#
-	#if possible_positions.is_empty():
-		#print("no bird")
-		#return
-	#
-	#var chosen = possible_positions[randi() % possible_positions.size()]
-	#var spawn_position = Vector2(
-		#tile_size * (chosen.x + 0.5),
-		#tile_size * (chosen.y + 0.5)
-	#)
-	
 	var bird_instance = bird.instantiate()
-	#bird_instance.position = spawn_position
 	bird_instance.oparysh = oparysh
 	add_child(bird_instance)
 	bird_instance.shadow_animation()

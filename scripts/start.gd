@@ -58,21 +58,17 @@ func setup_texture(texture_rect: TextureRect):
 	texture_rect.offset_bottom = 0
 	
 	texture_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	#texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://scenes/level.tscn")
 
-
 func _on_exit_pressed():
 	get_tree().quit()
-
 
 func _on_reset_pressed():
 	Global.reset_results()
 	update_collection()
-
 
 func _on_collection_pressed():
 	collection.visible = true
@@ -80,7 +76,6 @@ func _on_collection_pressed():
 	sprite1.visible = false
 	sprite2.visible = false
 	header.visible = false
-
 
 func _on_back_pressed():
 	collection.visible = false
