@@ -2,6 +2,7 @@
 extends CanvasLayer
 
 @onready var oparysh = get_tree().get_root().get_node("level/oparysh")
+@onready var tiles = get_tree().get_root().get_node("level/tiles")
 
 @onready var timer = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/timer
 @onready var bonus = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/bonus
@@ -72,9 +73,22 @@ var is_paused : bool = false
 
 var winning = false
 
+var bonus_atlas: AtlasTexture
+
+var style_null: StyleBoxTexture
+var style_fly: StyleBoxTexture
+var style_fly_hover: StyleBoxTexture
+var style_climb: StyleBoxTexture
+var style_climb_hover: StyleBoxTexture
+var style_hide: StyleBoxTexture
+var style_hide_hover: StyleBoxTexture
+
+@onready var fly_button = $new_bonuses/margins/VBoxContainer/fly_button
+@onready var climb_button = $new_bonuses/margins/VBoxContainer/climb_button
+@onready var hide_button = $new_bonuses/margins/VBoxContainer/hide_button
+
 func _ready():
 	pocket_button.add_to_group("ui")
-	info.text = ""
 	
 	bonus.visible = false
 	bonus.max_value = 100
@@ -131,20 +145,28 @@ func _ready():
 	win_texture.visible = false
 	
 	Global.connect("playing_changed", Callable(self, "_on_playing_changed"))
+	
+	fly_button.visible = false
+	climb_button.visible = false
+	hide_button.visible = false
 
-func _process(delta):
+func _process(_delta):
 	if !Global.playing: return
-	
-	#if Global.time > 0:
-		#Global.time -= delta
-	
+
 	timer.value = Global.eaten
 		
 	if Global.bonus:
 		get_bonus()
 	
-	#if Global.time <= 0 and Global.playing:
-		#won()
+	if Global.new_bonus != "":
+		match Global.new_bonus:
+			"climb":
+				climb_button.visible = true
+			"fly":
+				fly_button.visible = true
+			"hide":
+				hide_button.visible = true
+		Global.new_bonus = ""
 	
 	if timer.value == Global.max_eaten and Global.playing:
 		won()
@@ -153,25 +175,23 @@ func _process(delta):
 	if Global.health <= 0:
 		failed()
 		return
-	
-	#write()
 
 func write():
 	timer.value = max(0, Global.time)
 
-func print_info(drop_name: String):
-	add_item(drop_name)
-	
-	match drop_name:
-		"leaf": info.text = "+ 1 c"
-		"flower": info.text = "+ 2 c"
-		"stick": info.text = "+ 3 c"
-		"berry": info.text = "+ 5 c"
-		"mushroom": info.text = "+ 10 c"
-		"acorn": info.text = "+ 10 c"
-		"raf": info.text = "+ 15 c"
-	await get_tree().create_timer(2.0).timeout
-	info.text = ""
+#func print_info(drop_name: String):
+	#add_item(drop_name)
+	#
+	#match drop_name:
+		#"leaf": info.text = "+ 1 c"
+		#"flower": info.text = "+ 2 c"
+		#"stick": info.text = "+ 3 c"
+		#"berry": info.text = "+ 5 c"
+		#"mushroom": info.text = "+ 10 c"
+		#"acorn": info.text = "+ 10 c"
+		#"raf": info.text = "+ 15 c"
+	#await get_tree().create_timer(2.0).timeout
+	#info.text = ""
 
 func get_bonus():
 	if bonus_active:
@@ -577,3 +597,71 @@ func _exit_tree():
 		if tween and tween.is_valid():
 			tween.kill()
 	active_tweens.clear()
+
+func _on_fly_button_pressed() -> void:
+	if Global.active_bonuses.has("fly"):
+		print("flying")
+		fly_button.visible = false
+
+func _on_climb_button_pressed() -> void:
+	if Global.active_bonuses.has("climb"):
+		print("climbing")
+		
+		Global.playing = false
+		
+		var tile_size = 64
+		var my_pos = oparysh.global_position
+		var my_tile = Vector2i(floori(oparysh.global_position.x / tile_size), floori(oparysh.global_position.y / tile_size))
+		
+		var best_dir = Vector2i.ZERO
+		var best_dist = 9999.0
+		
+		var checks = [
+			Vector2i(0, -1),  # up
+			Vector2i(0, 1),   # down
+			Vector2i(-1, 0),  # left
+			Vector2i(1, 0)    # right
+		]
+		
+		for offset in checks:
+			if is_wall(my_tile + offset):
+				var wall_center = Vector2(
+					float(my_tile.x + offset.x) * tile_size + tile_size / 2.0,
+					float(my_tile.y + offset.y) * tile_size + tile_size / 2.0
+				)
+				var dist = my_pos.distance_to(wall_center)
+				if dist < best_dist:
+					best_dist = dist
+					best_dir = offset
+		
+		if best_dir == Vector2i.ZERO:
+			Global.playing = true
+			return
+		
+		var target_tile = my_tile + best_dir
+		var target_pos = Vector2(
+			target_tile.x * tile_size + tile_size / 2.0,
+			target_tile.y * tile_size + tile_size / 2.0
+		)
+
+		var tween = create_tween()
+		tween.tween_property(oparysh, "global_position", target_pos, 0.4).set_ease(Tween.EASE_OUT)
+		await tween.finished
+		
+		oparysh.target_position = target_pos
+		
+		Global.playing = true
+		
+		climb_button.visible = false
+
+func is_wall(tile: Vector2i) -> bool:
+	var tile_data = tiles.get_cell_tile_data(0, tile)
+	return tile_data != null and tile_data.get_collision_polygons_count(0) > 0
+
+func _on_hide_button_pressed() -> void:
+	if Global.active_bonuses.has("hide"):
+		print("hiding")
+		oparysh.safe = true
+		await get_tree().create_timer(3.0).timeout
+		print("not hiding")
+		hide_button.visible = false

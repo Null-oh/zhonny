@@ -29,7 +29,7 @@ func _process(delta):
 			t+= delta
 		else:
 			t = 0
-			spawn_bird()
+			#spawn_bird()
 #			отладка
 
 func _on_map_ready():

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dcb7g61vuwxai"]
+
+[ext_resource type="Texture2D" uid="uid://snmqcx1deh4p" path="res://img/template.png" id="1_aju46"]
+
+[node name="NinePatchRect" type="NinePatchRect" unique_id=204468312]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_aju46")
+region_rect = Rect2(66, 0, 62, 65)

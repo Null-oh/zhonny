@@ -26,8 +26,8 @@ func _on_area_2d_body_entered(body):
 		Global.total += drop_price
 		Global.add_drop(drop_name)
 		
-		if interface and interface.has_method("print_info"):
-			interface.print_info(drop_name)
+		if interface and interface.has_method("add_item"):
+			interface.add_item(drop_name)
 		
 		match drop_name:
 			"leaf": 

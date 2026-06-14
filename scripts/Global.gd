@@ -29,6 +29,10 @@ var pockets = {}
 var drops = []
 var results = []
 
+var last_three = []
+var new_bonus : String = ""
+var active_bonuses = []
+
 func reset():
 	health = 100
 	speed = 40
@@ -37,6 +41,10 @@ func reset():
 	bonus = false
 	drops = []
 	eaten = 0
+	last_three = []
+	new_bonus = ""
+	active_bonuses = []
+
 
 
 func reset_results():
@@ -46,11 +54,33 @@ func reset_results():
 
 func add_drop(item_name: String):
 	print("Added to Global.drops: ", item_name)
+	
+	var found = false
 	for drop in drops:
 		if drop["name"] == item_name:
 			drop["count"] += 1
-			return
-	drops.append({"name": item_name, "count": 1})
+			found = true
+			break
+	if !found:
+		drops.append({"name": item_name, "count": 1})
+	
+	last_three.append(item_name)
+	
+	if last_three.size() > 3:
+		last_three.remove_at(0)
+	print("Last three: ", last_three)
+	
+	if last_three.size() == 3 and last_three[0] == last_three[1] and last_three[1] == last_three[2]:
+		print("New bonus:")
+		match last_three[0]:
+			"berry":
+				new_bonus = "climb"
+			"raf":
+				new_bonus = "fly"
+			"leaf":
+				new_bonus = "hide"
+		print(new_bonus)
+		active_bonuses.append(new_bonus)
 
 func count_drops(item_name: String) -> int:
 	for drop in drops:

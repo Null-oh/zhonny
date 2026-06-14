@@ -151,10 +151,9 @@ func _enable_hit_area():
 
 func _on_area_2d_body_entered(body):
 	if can_hit:
-		print("can hit")
 		if body.name == "oparysh":
-			print("oparysh")
-			Global.health = 0
+			if not body.safe:
+				Global.health = 0
 			can_hit = false
 
 func _exit_tree():

@@ -20,6 +20,7 @@ var stop_distance: float = 1.0
 var start_position: Vector2
 
 var hatching : bool = false
+var safe : bool = false
 
 @onready var light = $light
 
@@ -89,8 +90,6 @@ func play_hatch_animation():
 	tween.tween_property(light, "energy", 1.0, 0.5)
 	
 	await tween.finished
-
-
 
 func _process(delta):
 	if hatching:
