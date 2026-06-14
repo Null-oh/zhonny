@@ -212,8 +212,8 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.87909836, 0.15368852)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8wic"]
-size = Vector2(10, 8)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wiiwr"]
+radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mw2h2"]
 radius = 12.0
@@ -228,7 +228,8 @@ texture = ExtResource("2_a41o3")
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=2010855415]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_v63cr")
-animation = &"hatch"
+animation = &"up"
+frame_progress = 0.42533153
 
 [node name="light" type="PointLight2D" parent="." unique_id=959311560]
 color = Color(0.38431373, 0.57254905, 0.2509804, 1)
@@ -237,7 +238,8 @@ texture = SubResource("GradientTexture2D_a41o3")
 texture_scale = 4.0
 
 [node name="collision" type="CollisionShape2D" parent="." unique_id=1662170345]
-shape = SubResource("RectangleShape2D_a8wic")
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_wiiwr")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1400566455]
 

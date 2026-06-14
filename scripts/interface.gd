@@ -219,8 +219,6 @@ func won():
 	if winning:
 		return
 	
-	
-	print("won() called")
 	winning = true
 	
 	win_texture.visible = true
@@ -230,9 +228,7 @@ func won():
 	if oparysh and oparysh.has_method("hatch"):
 		
 		if oparysh.has_method("play_hatch_animation"):
-			print("starting hatch animation")
 			await oparysh.play_hatch_animation()
-			print("hatch animation complete")
 		
 		Global.playing = false
 		result = oparysh.hatch()
@@ -288,21 +284,24 @@ func won():
 func setup_texture(texture_rect: TextureRect):
 	var color_rect = texture_rect.get_parent()
 	
-	color_rect.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-	color_rect.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	
-	texture_rect.anchor_left = 0.0
-	texture_rect.anchor_top = 0.0
-	texture_rect.anchor_right = 1.0
-	texture_rect.anchor_bottom = 1.0
-	texture_rect.offset_left = 0
-	texture_rect.offset_top = 0
-	texture_rect.offset_right = 0
-	texture_rect.offset_bottom = 0
-	
-	texture_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	#texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	#color_rect.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	#color_rect.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	#
+##	0.5
+	#
+	#texture_rect.anchor_left = 0.0
+	#texture_rect.anchor_top = 0.0
+	#texture_rect.anchor_right = 1.0
+	#texture_rect.anchor_bottom = 1.0
+	#
+	#texture_rect.offset_left = 12
+	#texture_rect.offset_top = 12
+	#texture_rect.offset_right = -12
+	#texture_rect.offset_bottom = -12
+	#
+	##texture_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	##texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 
 func setup_win_texture():
 	win_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE

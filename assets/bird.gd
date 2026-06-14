@@ -69,11 +69,7 @@ func shadow_animation():
 		is_following = false
 		drop()
 
-
 func _on_playing_changed(new_value):
-	#if !new_value and shadow_tween and shadow_tween.is_valid():
-		#shadow_tween.kill()
-	
 	if new_value:
 		is_paused = false
 		for tween in active_tweens:
@@ -88,14 +84,14 @@ func _on_playing_changed(new_value):
 func drop(): 
 	is_following = false
 	
-	sprite.position = Vector2(0, -200)
+	sprite.position = Vector2(200, -200)
 	sprite.visible = true
 	
 	var bird_tween: Tween = create_tween()
 	active_tweens.append(bird_tween)
-	var fall_duration = 0.5
+	var fall_duration = 0.8
 	
-	bird_tween.tween_property(sprite, "position:y", 0, fall_duration)\
+	bird_tween.tween_property(sprite, "position", Vector2(0, 25), fall_duration)\
 			  .set_trans(Tween.TRANS_QUAD)\
 			  .set_ease(Tween.EASE_IN)
 	
@@ -116,9 +112,10 @@ func drop():
 	
 	bird_tween = create_tween()
 	active_tweens.append(bird_tween)
-	bird_tween.tween_property(sprite, "position:y", -200, fall_duration)\
+	
+	bird_tween.tween_property(sprite, "position", Vector2(-200, -200), fall_duration)\
 			  .set_trans(Tween.TRANS_QUAD)\
-			  .set_ease(Tween.EASE_OUT)
+			  .set_ease(Tween.EASE_IN)
 	
 	await bird_tween.finished
 	self.queue_free()

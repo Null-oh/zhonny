@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7dclychy2f4k"]
+[gd_scene format=3 uid="uid://c7dclychy2f4k"]
 
 [ext_resource type="TileSet" uid="uid://b85fc7uv1o5ch" path="res://assets/tiles.tres" id="1_t7wxr"]
 
-[node name="tiles" type="TileMap"]
+[node name="tiles" type="TileMap" unique_id=1656870880]
 texture_filter = 1
 tile_set = ExtResource("1_t7wxr")
 format = 2

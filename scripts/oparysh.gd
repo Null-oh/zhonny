@@ -32,7 +32,9 @@ func _ready():
 func hatch() -> String:
 	print("hatch started")
 	
+	print("Global.drops = ",Global.drops)
 	total_drops = Global.drops
+	print("total_drops = ",total_drops)
 	
 	if Global.total > 500:
 		return "explode"
@@ -58,7 +60,6 @@ func hatch() -> String:
 
 func play_hatch_animation():
 	hatching = true
-	print("play_hatch_animation called")
 	
 	if not sprite.sprite_frames.has_animation("hatch"):
 		print("ERROR: no 'hatch' animation found!")
@@ -94,7 +95,6 @@ func play_hatch_animation():
 func _process(delta):
 	if hatching:
 		return
-	
 	
 	speed = Global.speed
 	if is_moving: 
