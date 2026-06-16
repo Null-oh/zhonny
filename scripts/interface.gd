@@ -71,7 +71,8 @@ var bonus_active : bool = false
 var active_tweens : Array[Tween] = []
 var is_paused : bool = false
 
-var winning = false
+var winning : bool = false
+var hiding : bool = false
 
 var bonus_atlas: AtlasTexture
 
@@ -601,7 +602,46 @@ func _exit_tree():
 func _on_fly_button_pressed() -> void:
 	if Global.active_bonuses.has("fly"):
 		print("flying")
+		Global.playing = false
+		
+		var camera = get_viewport().get_camera_2d()
+		
+		if !camera:
+			return
+		
+		var camera_tween = create_tween()
+		camera_tween.tween_property(camera, "zoom", Vector2(3, 3), 0.5)
+		await camera_tween.finished
+		
+		await get_tree().process_frame
+		while not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			await get_tree().process_frame
+		
+		var mouse_pos = get_viewport().get_mouse_position()
+		var viewport_size = get_viewport().get_visible_rect().size
+		var world_mouse_pos = camera.global_position + (mouse_pos - viewport_size / 2) / camera.zoom
+		
+		var tile_size = 64
+		var tile_x = floori(world_mouse_pos.x / tile_size)
+		var tile_y = floori(world_mouse_pos.y / tile_size)
+		var target_pos = Vector2(tile_x * tile_size + tile_size / 2, tile_y * tile_size + tile_size / 2)
+		
+		oparysh.is_moving = false
+		oparysh.flying = true
+		var fly_tween = create_tween()
+		fly_tween.tween_property(oparysh, "global_position", target_pos, 1.0)
+		oparysh.target_position = target_pos
+		await fly_tween.finished
+		oparysh.flying = false
+		oparysh.is_moving = true
+		
+		var zoom_back_tween = create_tween()
+		zoom_back_tween.tween_property(camera, "zoom", Vector2(7, 7), 0.5)
+		await zoom_back_tween.finished
+		
+		Global.playing = true
 		fly_button.visible = false
+		print("done flying")
 
 func _on_climb_button_pressed() -> void:
 	if Global.active_bonuses.has("climb"):
@@ -660,8 +700,9 @@ func is_wall(tile: Vector2i) -> bool:
 
 func _on_hide_button_pressed() -> void:
 	if Global.active_bonuses.has("hide"):
-		print("hiding")
 		oparysh.safe = true
-		await get_tree().create_timer(3.0).timeout
-		print("not hiding")
+		#await get_tree().create_timer(3.0).timeout
+		await oparysh.sprite.animation_finished
+		oparysh.safe = false
 		hide_button.visible = false
+		print("not hiding")

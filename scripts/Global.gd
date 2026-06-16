@@ -33,6 +33,9 @@ var last_three = []
 var new_bonus : String = ""
 var active_bonuses = []
 
+#debug
+var is_bird : bool = true
+
 func reset():
 	health = 100
 	speed = 40

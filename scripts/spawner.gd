@@ -29,7 +29,8 @@ func _process(delta):
 			t+= delta
 		else:
 			t = 0
-			#spawn_bird()
+			if Global.is_bird:
+				spawn_bird()
 #			отладка
 
 func _on_map_ready():
@@ -90,4 +91,4 @@ func spawn_bird():
 	var bird_instance = bird.instantiate()
 	bird_instance.oparysh = oparysh
 	add_child(bird_instance)
-	bird_instance.shadow_animation()
+	bird_instance.shadow_animation("down")

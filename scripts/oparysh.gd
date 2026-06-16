@@ -21,6 +21,7 @@ var start_position: Vector2
 
 var hatching : bool = false
 var safe : bool = false
+var flying : bool = false
 
 @onready var light = $light
 
@@ -95,6 +96,14 @@ func _process(delta):
 	if hatching:
 		return
 	
+	if safe:
+		sprite.play("hide")
+		return  
+	
+	if flying:
+		sprite.play("fly")
+		return
+	
 	speed = Global.speed
 	if is_moving: 
 		direction = global_position.direction_to(target_position)
@@ -118,6 +127,8 @@ func _process(delta):
 	else:
 		sprite.play("idle")
 		sprite.flip_v = false
+	
+
 
 func _input(event):
 	if (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):

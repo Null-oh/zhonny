@@ -9,6 +9,8 @@ extends NinePatchRect
 @onready var mushroom_line = $MarginContainer/VBoxContainer/HBoxContainer6/mushroom_line
 @onready var raf_line = $MarginContainer/VBoxContainer/HBoxContainer7/raf_line
 
+@onready var toggle_bird_button = $MarginContainer/VBoxContainer/toggle_bird
+
 var sticks
 var leaves
 var flowers
@@ -60,3 +62,13 @@ func _on_apply_debug_pressed() -> void:
 
 func _on_reset_debug_2_pressed() -> void:
 	Global.reset()
+
+
+func _on_toggle_bird_pressed() -> void:
+	if Global.is_bird:
+		Global.is_bird = false
+		toggle_bird_button.text = "no bird"
+		
+	else:
+		Global.is_bird = true
+		toggle_bird_button.text = "is bird"

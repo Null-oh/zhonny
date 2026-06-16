@@ -31,43 +31,56 @@ func _ready():
 	
 	area.body_entered.connect(_on_area_2d_body_entered)
 	
-	shadow_animation()
+	#shadow_animation()
 
 func _process(_delta):
 	if is_following and oparysh and is_instance_valid(oparysh):
 		shadow.global_position = oparysh.global_position
 
-func shadow_animation():
+func shadow_animation(type: String):
 	if Global.playing and oparysh:
-		shadow.global_position = oparysh.global_position
-		
-		shadow.modulate.a = 0.0
-		
-		shadow_tween = create_tween()
-		active_tweens.append(shadow_tween)
-		shadow_tween.set_parallel(true)
-		
-		shadow_tween.tween_property(shadow, "modulate:a", 0.8, timer)\
-				   .set_trans(Tween.TRANS_QUAD)\
-				   .set_ease(Tween.EASE_IN)
-		
-		is_following = true
-		await shadow_tween.finished
-		
-		if oparysh.velocity.length() > 0:
-			var offset_direction = oparysh.direction
-			var target_position = oparysh.global_position + (offset_direction * 25)
+		match type:
+			"up":
+				is_following = false
+				
+				shadow_tween = create_tween()
+				active_tweens.append(shadow_tween)
+				shadow_tween.set_parallel(true)
+				
+				shadow_tween.tween_property(shadow, "modulate:a", 0.0, 0.2)\
+						   .set_trans(Tween.TRANS_QUAD)\
+						   .set_ease(Tween.EASE_IN)
 			
-			var move_tween = create_tween()
-			move_tween.tween_property(shadow, "global_position", target_position, 0.1)\
-				.set_trans(Tween.TRANS_QUAD)\
-				.set_ease(Tween.EASE_OUT)
-			await move_tween.finished
-		else:
-			pass
-		
-		is_following = false
-		drop()
+			"down":
+				shadow.global_position = oparysh.global_position
+				
+				shadow.modulate.a = 0.0
+				
+				shadow_tween = create_tween()
+				active_tweens.append(shadow_tween)
+				shadow_tween.set_parallel(true)
+				
+				shadow_tween.tween_property(shadow, "modulate:a", 0.6, timer)\
+						   .set_trans(Tween.TRANS_QUAD)\
+						   .set_ease(Tween.EASE_IN)
+				
+				is_following = true
+				await shadow_tween.finished
+				
+				if oparysh.velocity.length() > 0:
+					var offset_direction = oparysh.direction
+					var target_position = oparysh.global_position + (offset_direction * 25)
+					
+					var move_tween = create_tween()
+					move_tween.tween_property(shadow, "global_position", target_position, 0.1)\
+						.set_trans(Tween.TRANS_QUAD)\
+						.set_ease(Tween.EASE_OUT)
+					await move_tween.finished
+				else:
+					pass
+				
+				is_following = false
+				drop()
 
 func _on_playing_changed(new_value):
 	if new_value:
@@ -116,6 +129,8 @@ func drop():
 	bird_tween.tween_property(sprite, "position", Vector2(-200, -200), fall_duration)\
 			  .set_trans(Tween.TRANS_QUAD)\
 			  .set_ease(Tween.EASE_IN)
+	
+	shadow_animation("up")
 	
 	await bird_tween.finished
 	self.queue_free()
