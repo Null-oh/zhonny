@@ -30,8 +30,6 @@ func _ready():
 	can_hit = false
 	
 	area.body_entered.connect(_on_area_2d_body_entered)
-	
-	#shadow_animation()
 
 func _process(_delta):
 	if is_following and oparysh and is_instance_valid(oparysh):

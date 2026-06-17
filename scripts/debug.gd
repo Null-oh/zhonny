@@ -57,7 +57,6 @@ func _on_apply_debug_pressed() -> void:
 		Global.eaten += 1
 		Global.total += 25
 
-#Global.total += drop_price
 
 
 func _on_reset_debug_2_pressed() -> void:

@@ -92,7 +92,7 @@ func make_maze():
 			await get_tree().process_frame
 	
 	
-	replace_floor_tiles()
+	#replace_floor_tiles()
 	await zoom_in_camera()
 	map_ready.emit()
 
@@ -116,7 +116,7 @@ func zoom_in_camera():
 	Global.playing = true
 
 func set_camera_to_full_map():
-	var tile_size = Map.tile_set.tile_size
+	#var tile_size = Map.tile_set.tile_size
 	var map_width_px = width * tile_size.x
 	var map_height_px = height * tile_size.y
 	var viewport_size = get_viewport().get_visible_rect().size
@@ -154,70 +154,10 @@ func remove_wall_between(current: Vector2i, next: Vector2i, dir: Vector2i):
 	Map.set_cell(layer, current, 1, get_atlas_coords(current_walls), 0)
 	Map.set_cell(layer, next, 1, get_atlas_coords(next_walls), 0)
 
-func replace_floor_tiles():
+func get_walls_at(_position: Vector2i) -> int:
 	var layer = 0
-	var used_cells = Map.get_used_cells(layer)
+	var atlas_coords = Map.get_cell_atlas_coords(layer, _position)
 	
-	# Сначала соберем все тайлы с индексом 0 (пустые проходы)
-	var floor_tiles: Array[Vector2i] = []
-	for cell in used_cells:
-		var walls = get_walls_at(cell)  # ИСПРАВЛЕНО: используем правильную функцию
-		if walls == 0:
-			floor_tiles.append(cell)
-		
-	# Для каждого пустого тайла проверяем соседей
-	for cell in floor_tiles:
-		var up_neighbor = cell + Vector2i.UP
-		var down_neighbor = cell + Vector2i.DOWN
-		var left_neighbor = cell + Vector2i.LEFT
-		var right_neighbor = cell + Vector2i.RIGHT
-		
-		# Получаем стены соседей (если сосед существует)
-		var up_walls = 0
-		var down_walls = 0
-		var left_walls = 0
-		var right_walls = 0
-		
-		if Map.get_cell_source_id(layer, up_neighbor) != -1:
-			up_walls = get_walls_at(up_neighbor)
-		if Map.get_cell_source_id(layer, down_neighbor) != -1:
-			down_walls = get_walls_at(down_neighbor)
-		if Map.get_cell_source_id(layer, left_neighbor) != -1:
-			left_walls = get_walls_at(left_neighbor)
-		if Map.get_cell_source_id(layer, right_neighbor) != -1:
-			right_walls = get_walls_at(right_neighbor)
-		
-		# Проверяем наличие прилегающих стен у соседей
-		var new_walls = 0
-		
-		# Сосед сверху имеет южную стену? -> добавляем северную стену центру
-		if up_walls & S:
-			new_walls |= N
-		
-		# Сосед снизу имеет северную стену? -> добавляем южную стену центру
-		if down_walls & N:
-			new_walls |= S
-		
-		# Сосед слева имеет восточную стену? -> добавляем западную стену центру
-		if left_walls & E:
-			new_walls |= W
-		
-		# Сосед справа имеет западную стену? -> добавляем восточную стену центру
-		if right_walls & W:
-			new_walls |= E
-		
-		# Заменяем тайл только если он должен измениться
-		if new_walls != 0:
-			Map.set_cell(layer, cell, 1, get_atlas_coords(new_walls), 0)
-
-func get_walls_at(position: Vector2i) -> int:
-	#var layer = 0
-	#var atlas_coords = Map.get_cell_atlas_coords(layer, position)
-	#return atlas_coords.y * 4 + atlas_coords.x
-	var layer = 0
-	var atlas_coords = Map.get_cell_atlas_coords(layer, position)
-	
-	# Обратный маппинг для wall_to_coords
 	var coords_to_wall = {
 		Vector2i(0, 0): 0,
 		Vector2i(1, 0): 1,
@@ -240,13 +180,6 @@ func get_walls_at(position: Vector2i) -> int:
 	return coords_to_wall.get(atlas_coords, 0)
 
 func get_atlas_coords(walls: int) -> Vector2i:
-	
-	## walls - это число от 0 до 15 (битовая маска: N=1, E=2, S=4, W=8)
-	#var x = walls % 4
-	#var y = walls / 4
-	#return Vector2i(x, y)
-	
-	
 	var wall_to_coords = {
 		0: Vector2i(0, 0),
 		1: Vector2i(1, 0),
@@ -268,8 +201,6 @@ func get_atlas_coords(walls: int) -> Vector2i:
 	return wall_to_coords[walls]
 
 func set_camera():
-	var tile_size = Map.tile_set.tile_size
-	
 	var map_left = 0
 	var map_top = 0
 	var map_right = width * tile_size.x

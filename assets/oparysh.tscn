@@ -374,7 +374,7 @@ texture = ExtResource("2_a41o3")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_v63cr")
 animation = &"fly"
-frame_progress = 0.59024125
+frame_progress = 0.8259195
 
 [node name="light" type="PointLight2D" parent="." unique_id=959311560]
 visible = false

@@ -27,6 +27,16 @@ extends CanvasLayer
 @onready var pocketbeetle = $collection/pocketbeetle
 @onready var pockethton = $collection/pockethton
 
+@onready var page1 = $how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page1
+@onready var page2 = $how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page2
+@onready var page3 = $how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page3
+@onready var page4 = $how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4
+@onready var page5 = $how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page5
+
+@onready var forward_button = $how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/buttons/forward
+@onready var back_button = $how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/buttons/back
+var current_page : int
+
 func _ready():
 	sprite.play("default")
 	
@@ -49,6 +59,13 @@ func _ready():
 	pockethton.visible = false
 	
 	load_pockets()
+	
+	page1.visible = false
+	page2.visible = false
+	page3.visible = false
+	page4.visible = false
+	page5.visible = false
+	current_page = 1
 
 func setup_texture(texture_rect: TextureRect):
 	var color_rect = texture_rect.get_parent()
@@ -118,6 +135,68 @@ func _on_start_pressed():
 
 func _on_how_to_pressed():
 	how_to.visible = true
+	page1.visible = true
+	back_button.disabled = true
+	current_page = 1
+
+func _on_back_how_to_pressed() -> void:
+	flip_page("back")
+
+func _on_forward_how_to_pressed() -> void:
+	flip_page("forward")
+
+func flip_page(direction: String):
+	match direction:
+		"forward":
+			match current_page:
+				1:
+					page1.visible = false
+					page2.visible = true
+					current_page = 2
+					forward_button.disabled = false
+					back_button.disabled = false
+				2:
+					page2.visible = false
+					page3.visible = true
+					current_page = 3
+					forward_button.disabled = false
+				3: 
+					page3.visible = false
+					page4.visible = true
+					current_page = 4
+					forward_button.disabled = false
+				4: 
+					page4.visible = false
+					page5.visible = true
+					current_page = 5
+					forward_button.disabled = true
+				5: 
+					pass
+		"back":
+			match current_page:
+				1: 
+					pass
+				2: 
+					page1.visible = true
+					page2.visible = false
+					current_page = 1
+					back_button.disabled = true
+					forward_button.disabled = false
+				3: 
+					page2.visible = true
+					page3.visible = false
+					current_page = 2
+					back_button.disabled = false
+				4: 
+					page3.visible = true
+					page4.visible = false
+					current_page = 3
+					back_button.disabled = false
+				5: 
+					page4.visible = true
+					page5.visible = false
+					current_page = 4
+					forward_button.disabled = false
 
 func _on_collection_pressed():
 	collection.visible = true
@@ -128,6 +207,7 @@ func _on_exit_pressed():
 func _on_back_pressed():
 	collection.visible = false
 	how_to.visible = false
+	current_page = 1
 
 func _on_reset_pressed():
 	Global.reset_results()

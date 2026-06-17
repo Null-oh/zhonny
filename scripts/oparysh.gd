@@ -22,6 +22,7 @@ var start_position: Vector2
 var hatching : bool = false
 var safe : bool = false
 var flying : bool = false
+var climbing : bool = false
 
 @onready var light = $light
 
@@ -30,6 +31,59 @@ func _ready():
 	sprite.play("idle")
 	sprite.flip_v = false
 	light.energy = 0.0
+
+func _process(_delta):
+	if hatching:
+		return
+	
+	if safe:
+		sprite.play("hide")
+		return  
+	
+	if flying:
+		sprite.play("fly")
+		return
+	
+	if climbing:
+		sprite.play("fly")
+		
+		var climb_dir = global_position.direction_to(target_position)
+		
+		if abs(climb_dir.x) >= abs(climb_dir.y):
+			sprite.rotation = deg_to_rad(90) if climb_dir.x > 0 else deg_to_rad(-90)
+			sprite.flip_v = false
+			sprite.flip_h = false
+		else:
+			sprite.rotation = 0
+			sprite.flip_v = climb_dir.y > 0
+			sprite.flip_h = false
+		return
+	
+	sprite.rotation = 0
+	
+	speed = Global.speed
+	if is_moving: 
+		direction = global_position.direction_to(target_position)
+		velocity = direction * speed
+		if Global.playing:
+			move_and_slide()
+		
+		if abs(direction.x) > abs(direction.y):
+			sprite.play("side")
+			sprite.flip_h = direction.x > 0
+			sprite.flip_v = false
+		else:
+			sprite.play("up")
+			sprite.flip_v = direction.y > 0
+		
+		var distance = global_position.distance_to(target_position)
+		if distance < stop_distance:
+			velocity = Vector2.ZERO
+			is_moving = false
+			global_position = target_position
+	else:
+		sprite.play("idle")
+		sprite.flip_v = false
 
 func hatch() -> String:
 	print("hatch started")
@@ -91,44 +145,6 @@ func play_hatch_animation():
 	tween.tween_property(light, "energy", 1.0, 0.5)
 	
 	await tween.finished
-
-func _process(delta):
-	if hatching:
-		return
-	
-	if safe:
-		sprite.play("hide")
-		return  
-	
-	if flying:
-		sprite.play("fly")
-		return
-	
-	speed = Global.speed
-	if is_moving: 
-		direction = global_position.direction_to(target_position)
-		velocity = direction * speed
-		if Global.playing:
-			move_and_slide()
-		
-		if abs(direction.x) > abs(direction.y):
-			sprite.play("side")
-			sprite.flip_h = direction.x > 0
-			sprite.flip_v = false
-		else:
-			sprite.play("up")
-			sprite.flip_v = direction.y > 0
-		
-		var distance = global_position.distance_to(target_position)
-		if distance < stop_distance:
-			velocity = Vector2.ZERO
-			is_moving = false
-			global_position = target_position
-	else:
-		sprite.play("idle")
-		sprite.flip_v = false
-	
-
 
 func _input(event):
 	if (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):

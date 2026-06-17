@@ -31,7 +31,6 @@ func _process(delta):
 			t = 0
 			if Global.is_bird:
 				spawn_bird()
-#			отладка
 
 func _on_map_ready():
 	spawn_drops()

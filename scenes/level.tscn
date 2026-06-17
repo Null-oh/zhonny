@@ -23,7 +23,7 @@ metadata/_custom_type_script = "uid://d061ep0kq34n"
 [sub_resource type="Resource" id="Resource_a2q8i"]
 script = ExtResource("5_pccjk")
 drop = ExtResource("5_myo3r")
-quantity = 15
+quantity = 20
 
 [sub_resource type="Resource" id="Resource_ykgt6"]
 script = ExtResource("5_pccjk")
@@ -33,7 +33,7 @@ quantity = 10
 [sub_resource type="Resource" id="Resource_fpun6"]
 script = ExtResource("5_pccjk")
 drop = ExtResource("10_5xatw")
-quantity = 10
+quantity = 7
 metadata/_custom_type_script = "uid://d061ep0kq34n"
 
 [sub_resource type="Resource" id="Resource_wc255"]
@@ -45,7 +45,7 @@ metadata/_custom_type_script = "uid://d061ep0kq34n"
 [sub_resource type="Resource" id="Resource_arp2o"]
 script = ExtResource("5_pccjk")
 drop = ExtResource("9_fpun6")
-quantity = 15
+quantity = 10
 metadata/_custom_type_script = "uid://d061ep0kq34n"
 
 [sub_resource type="Resource" id="Resource_ux5qa"]

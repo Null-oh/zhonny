@@ -88,6 +88,9 @@ var style_hide_hover: StyleBoxTexture
 @onready var climb_button = $new_bonuses/margins/VBoxContainer/climb_button
 @onready var hide_button = $new_bonuses/margins/VBoxContainer/hide_button
 
+@onready var debug_window = $debug
+var tile_size : int = 64
+
 func _ready():
 	pocket_button.add_to_group("ui")
 	
@@ -118,12 +121,12 @@ func _ready():
 	label5.text = "???"
 	label6.text = "???"
 	
-	setup_texture(texture1)
-	setup_texture(texture2)
-	setup_texture(texture3)
-	setup_texture(texture4)
-	setup_texture(texture5)
-	setup_texture(texture6)
+	#setup_texture(texture1)
+	#setup_texture(texture2)
+	#setup_texture(texture3)
+	#setup_texture(texture4)
+	#setup_texture(texture5)
+	#setup_texture(texture6)
 	
 	#setup_win_texture()
 	
@@ -150,6 +153,8 @@ func _ready():
 	fly_button.visible = false
 	climb_button.visible = false
 	hide_button.visible = false
+	
+	debug_window.visible = false
 
 func _process(_delta):
 	if !Global.playing: return
@@ -177,22 +182,22 @@ func _process(_delta):
 		failed()
 		return
 
-func write():
-	timer.value = max(0, Global.time)
-
-#func print_info(drop_name: String):
-	#add_item(drop_name)
-	#
-	#match drop_name:
-		#"leaf": info.text = "+ 1 c"
-		#"flower": info.text = "+ 2 c"
-		#"stick": info.text = "+ 3 c"
-		#"berry": info.text = "+ 5 c"
-		#"mushroom": info.text = "+ 10 c"
-		#"acorn": info.text = "+ 10 c"
-		#"raf": info.text = "+ 15 c"
-	#await get_tree().create_timer(2.0).timeout
-	#info.text = ""
+#func write():
+	#timer.value = max(0, Global.time)
+#
+##func print_info(drop_name: String):
+	##add_item(drop_name)
+	##
+	##match drop_name:
+		##"leaf": info.text = "+ 1 c"
+		##"flower": info.text = "+ 2 c"
+		##"stick": info.text = "+ 3 c"
+		##"berry": info.text = "+ 5 c"
+		##"mushroom": info.text = "+ 10 c"
+		##"acorn": info.text = "+ 10 c"
+		##"raf": info.text = "+ 15 c"
+	##await get_tree().create_timer(2.0).timeout
+	##info.text = ""
 
 func get_bonus():
 	if bonus_active:
@@ -302,27 +307,27 @@ func won():
 	var tween = create_tween()
 	tween.tween_property(oparysh_light, "energy", 0.0, 0.2)
 
-func setup_texture(texture_rect: TextureRect):
-	var color_rect = texture_rect.get_parent()
-	
-	#color_rect.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-	#color_rect.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+#func setup_texture(texture_rect: TextureRect):
+	#var color_rect = texture_rect.get_parent()
 	#
-##	0.5
-	#
-	#texture_rect.anchor_left = 0.0
-	#texture_rect.anchor_top = 0.0
-	#texture_rect.anchor_right = 1.0
-	#texture_rect.anchor_bottom = 1.0
-	#
-	#texture_rect.offset_left = 12
-	#texture_rect.offset_top = 12
-	#texture_rect.offset_right = -12
-	#texture_rect.offset_bottom = -12
-	#
-	##texture_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	##texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	##color_rect.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	##color_rect.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	##
+###	0.5
+	##
+	##texture_rect.anchor_left = 0.0
+	##texture_rect.anchor_top = 0.0
+	##texture_rect.anchor_right = 1.0
+	##texture_rect.anchor_bottom = 1.0
+	##
+	##texture_rect.offset_left = 12
+	##texture_rect.offset_top = 12
+	##texture_rect.offset_right = -12
+	##texture_rect.offset_bottom = -12
+	##
+	###texture_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	#texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	###texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 
 func setup_win_texture():
 	win_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -621,7 +626,7 @@ func _on_fly_button_pressed() -> void:
 		var viewport_size = get_viewport().get_visible_rect().size
 		var world_mouse_pos = camera.global_position + (mouse_pos - viewport_size / 2) / camera.zoom
 		
-		var tile_size = 64
+		#var tile_size = 64
 		var tile_x = floori(world_mouse_pos.x / tile_size)
 		var tile_y = floori(world_mouse_pos.y / tile_size)
 		var target_pos = Vector2(tile_x * tile_size + tile_size / 2, tile_y * tile_size + tile_size / 2)
@@ -648,8 +653,9 @@ func _on_climb_button_pressed() -> void:
 		print("climbing")
 		
 		Global.playing = false
+		oparysh.climbing = true
 		
-		var tile_size = 64
+		#var tile_size = 64
 		var my_pos = oparysh.global_position
 		var my_tile = Vector2i(floori(oparysh.global_position.x / tile_size), floori(oparysh.global_position.y / tile_size))
 		
@@ -683,12 +689,15 @@ func _on_climb_button_pressed() -> void:
 			target_tile.x * tile_size + tile_size / 2.0,
 			target_tile.y * tile_size + tile_size / 2.0
 		)
-
+		
+		oparysh.target_position = target_pos
+		
 		var tween = create_tween()
 		tween.tween_property(oparysh, "global_position", target_pos, 0.4).set_ease(Tween.EASE_OUT)
 		await tween.finished
 		
-		oparysh.target_position = target_pos
+		#oparysh.target_position = target_pos
+		oparysh.climbing = false
 		
 		Global.playing = true
 		
@@ -706,3 +715,9 @@ func _on_hide_button_pressed() -> void:
 		oparysh.safe = false
 		hide_button.visible = false
 		print("not hiding")
+
+func _on_debug_button_pressed() -> void:
+	if debug_window.visible:
+		debug_window.visible = false
+	else:
+		debug_window.visible = true

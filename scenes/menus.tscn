@@ -4,6 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://snmqcx1deh4p" path="res://img/template.png" id="1_dve7u"]
 [ext_resource type="Texture2D" uid="uid://r7seb6moqg1w" path="res://img/опарыш_up.png" id="2_ou0nh"]
 [ext_resource type="FontFile" uid="uid://b1g365wn3n5ll" path="res://assets/kom-post.ttf" id="3_ugpjx"]
+[ext_resource type="Texture2D" uid="uid://bk3tss5ybosmh" path="res://img/how-to/01.PNG" id="5_0ypn7"]
+[ext_resource type="Texture2D" uid="uid://uvtvlmk2a1bb" path="res://img/how-to/arrow.png" id="6_r44s1"]
+[ext_resource type="Texture2D" uid="uid://ce7uvi47shddg" path="res://img/how-to/03.PNG" id="7_w6445"]
+[ext_resource type="Texture2D" uid="uid://enb2bl8k5byc" path="res://img/how-to/02.PNG" id="8_6how5"]
+[ext_resource type="Texture2D" uid="uid://chpunjr6wb4uk" path="res://img/new_bonus_buttons.png" id="9_rxqxn"]
+[ext_resource type="Texture2D" uid="uid://cgyfsr22eh672" path="res://img/leaf_texture.png" id="10_nn43q"]
+[ext_resource type="Texture2D" uid="uid://dvjqu0ol4s76b" path="res://img/berry_texture.png" id="11_0rwsv"]
+[ext_resource type="Texture2D" uid="uid://chkoccwk50jxp" path="res://img/raf_texture.png" id="12_dcbs7"]
+[ext_resource type="Texture2D" uid="uid://u5n8q26c4ahd" path="res://img/how-to/04.png" id="13_4racy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nvso"]
 atlas = ExtResource("2_ou0nh")
@@ -99,6 +108,38 @@ texture_margin_top = 12.0
 texture_margin_right = 12.0
 texture_margin_bottom = 12.0
 region_rect = Rect2(64, 64, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7g52o"]
+texture = ExtResource("1_dve7u")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 0, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fp656"]
+texture = ExtResource("1_dve7u")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(128, 0, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wi667"]
+texture = ExtResource("1_dve7u")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 128, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eecxf"]
+texture = ExtResource("1_dve7u")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(64, 128, 64, 64)
 
 [node name="menus" type="CanvasLayer" unique_id=354323044]
 script = ExtResource("1_dbhjr")
@@ -229,6 +270,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ugpjx")
 text = "ВЫХОД"
 
 [node name="collection" type="MarginContainer" parent="." unique_id=415956931]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -890,7 +932,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_he6ts")
 text = " назад "
 
 [node name="how_to" type="MarginContainer" parent="." unique_id=155608405]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -926,11 +967,488 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="temp" type="ColorRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer" unique_id=835947548]
+[node name="back" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer" unique_id=277947599]
 custom_minimum_size = Vector2(500, 300)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture = ExtResource("1_dve7u")
+region_rect = Rect2(64, 0, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back" unique_id=1904030988]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer" unique_id=1186292329]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+
+[node name="page1" type="ColorRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer" unique_id=449771751]
+visible = false
+custom_minimum_size = Vector2(464, 205)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page1" unique_id=1054801948]
+modulate = Color(1, 1, 1, 0.8627451)
+layout_mode = 1
+offset_left = 50.0
+offset_right = 1201.0
+offset_bottom = 647.0
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("5_0ypn7")
+
+[node name="arrow" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page1" unique_id=1877301638]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 120.5
+offset_right = 237.0
+offset_bottom = 248.5
+rotation = 1.5707964
+scale = Vector2(-1, 1)
+texture = ExtResource("6_r44s1")
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="text" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page1" unique_id=657447205]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 52.5
+offset_right = 327.0
+offset_bottom = 205.5
+texture = ExtResource("1_dve7u")
+region_rect = Rect2(128, 192, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page1/text" unique_id=1816569413]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Label" type="Label" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page1/text/MarginContainer" unique_id=2020751989]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+text = "чтобы вылупиться,
+жоня должен
+съесть достаточно
+еды!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="page2" type="ColorRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer" unique_id=975234104]
+visible = false
+custom_minimum_size = Vector2(464, 205)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page2" unique_id=605987252]
+modulate = Color(1, 1, 1, 0.8627451)
+layout_mode = 1
+offset_left = 50.0
+offset_right = 1201.0
+offset_bottom = 647.0
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("7_w6445")
+
+[node name="arrow" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page2" unique_id=204288898]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 215.5
+offset_right = 410.0
+offset_bottom = 343.5
+rotation = 3.1415927
+scale = Vector2(-1, 1)
+texture = ExtResource("6_r44s1")
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="text" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page2" unique_id=191661631]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 144.5
+offset_right = 362.0
+offset_bottom = 234.5
+texture = ExtResource("1_dve7u")
+region_rect = Rect2(128, 192, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page2/text" unique_id=139189088]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Label" type="Label" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page2/text/MarginContainer" unique_id=645573697]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+text = "можно посмотреть,
+что уже съедено:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="page3" type="ColorRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer" unique_id=422589413]
+visible = false
+custom_minimum_size = Vector2(464, 205)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page3" unique_id=618386098]
+modulate = Color(1, 1, 1, 0.8627451)
+layout_mode = 1
+offset_left = 50.0
+offset_right = 1201.0
+offset_bottom = 647.0
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("8_6how5")
+
+[node name="arrow" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page3" unique_id=811448431]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 132.5
+offset_right = 396.0
+offset_bottom = 260.5
+rotation = -1.5707964
+texture = ExtResource("6_r44s1")
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="text" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page3" unique_id=1091109730]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 63.5
+offset_right = 360.0
+offset_bottom = 153.5
+texture = ExtResource("1_dve7u")
+region_rect = Rect2(128, 192, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page3/text" unique_id=2133549023]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Label" type="Label" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page3/text/MarginContainer" unique_id=2122230904]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+text = "некоторая еда
+даёт бонусы..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="page4" type="ColorRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer" unique_id=1911228264]
+visible = false
+custom_minimum_size = Vector2(464, 205)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4" unique_id=484926170]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -135.0
+offset_right = 185.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer" unique_id=1558676551]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_dve7u")
+region_rect = Rect2(128, 192, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/text" unique_id=521104873]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Label" type="Label" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/text/MarginContainer" unique_id=1180739072]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+text = "...или способности!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item" type="HBoxContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer" unique_id=2082022279]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="NinePatchRect" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item" unique_id=115519261]
+custom_minimum_size = Vector2(66, 66)
+layout_mode = 2
+texture = ExtResource("9_rxqxn")
+region_rect = Rect2(0, 0, 66, 66)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="leaf" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item" unique_id=535581655]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("10_nn43q")
+
+[node name="leaf2" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item" unique_id=67006830]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("10_nn43q")
+
+[node name="leaf3" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item" unique_id=188931475]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("10_nn43q")
+
+[node name="Label" type="Label" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item" unique_id=575894456]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 20
+text = "= спрятаться под листик"
+
+[node name="item2" type="HBoxContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer" unique_id=1972606930]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="NinePatchRect" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item2" unique_id=611255136]
+custom_minimum_size = Vector2(66, 66)
+layout_mode = 2
+texture = ExtResource("9_rxqxn")
+region_rect = Rect2(0, 66, 66, 66)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="berry" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item2" unique_id=92461323]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("11_0rwsv")
+
+[node name="berry2" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item2" unique_id=403726501]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("11_0rwsv")
+
+[node name="berry3" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item2" unique_id=958956173]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("11_0rwsv")
+
+[node name="Label" type="Label" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item2" unique_id=2073033868]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 20
+text = "= переползти через стену"
+
+[node name="item3" type="HBoxContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer" unique_id=62663297]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="NinePatchRect" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item3" unique_id=2110493131]
+custom_minimum_size = Vector2(66, 66)
+layout_mode = 2
+texture = ExtResource("9_rxqxn")
+region_rect = Rect2(0, 132, 66, 66)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="raf" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item3" unique_id=1948207482]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("12_dcbs7")
+
+[node name="raf2" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item3" unique_id=1151687926]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("12_dcbs7")
+
+[node name="raf3" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item3" unique_id=27326236]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("12_dcbs7")
+
+[node name="Label" type="Label" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page4/VBoxContainer/item3" unique_id=1837659761]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 20
+text = "= перелететь подальше"
+
+[node name="page5" type="ColorRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer" unique_id=279912571]
+visible = false
+custom_minimum_size = Vector2(464, 205)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page5" unique_id=1655616129]
+modulate = Color(1, 1, 1, 0.8627451)
+layout_mode = 1
+offset_left = 227.99998
+offset_top = 2.9999998
+offset_right = 1379.0
+offset_bottom = 650.0
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("13_4racy")
+stretch_mode = 4
+
+[node name="arrow" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page5" unique_id=1914081081]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 49.0
+offset_right = 432.0
+offset_bottom = 177.0
+rotation = 1.5707964
+texture = ExtResource("6_r44s1")
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="text" type="NinePatchRect" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page5" unique_id=1848862437]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 264.0
+offset_bottom = 93.0
+texture = ExtResource("1_dve7u")
+region_rect = Rect2(128, 192, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page5/text" unique_id=597983262]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Label" type="Label" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/page5/text/MarginContainer" unique_id=1464050158]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_font_sizes/font_size = 32
+text = "не зевать: может
+быть и опасно..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="buttons" type="HBoxContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer" unique_id=1443117426]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="back" type="Button" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/buttons" unique_id=1994216201]
+custom_minimum_size = Vector2(47, 47)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7g52o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fp656")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fp656")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wi667")
+text = "←"
+
+[node name="forward" type="Button" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/buttons" unique_id=1301137871]
+custom_minimum_size = Vector2(47, 47)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_pressed_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_colors/font_outline_color = Color(0.37254903, 0.2627451, 0.20784314, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_ugpjx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7g52o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fp656")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fp656")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_eecxf")
+text = "→"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="how_to/NinePatchRect/MarginContainer/VBoxContainer" unique_id=503148525]
 layout_mode = 2
@@ -974,4 +1492,6 @@ offset_bottom = 40.0
 [connection signal="pressed" from="collection/pocketfrog/MarginContainer/VBoxContainer/close_pocket" to="." method="_on_close_pocket_pressed"]
 [connection signal="pressed" from="collection/pocketbeetle/MarginContainer/VBoxContainer/close_pocket" to="." method="_on_close_pocket_pressed"]
 [connection signal="pressed" from="collection/pockethton/MarginContainer/VBoxContainer/close_pocket" to="." method="_on_close_pocket_pressed"]
+[connection signal="pressed" from="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/buttons/back" to="." method="_on_back_how_to_pressed"]
+[connection signal="pressed" from="how_to/NinePatchRect/MarginContainer/VBoxContainer/back/MarginContainer/VBoxContainer/buttons/forward" to="." method="_on_forward_how_to_pressed"]
 [connection signal="pressed" from="how_to/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/back" to="." method="_on_back_pressed"]
